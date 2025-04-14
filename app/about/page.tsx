@@ -1,6 +1,22 @@
 import Image from "next/image"
 import { CheckCircle2 } from "lucide-react"
 
+const TeamCard = ({ name, role }: { name: string; role: string }) => (
+  <div className="text-center">
+    <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
+      <Image
+        src="/placeholder.svg?height=200&width=200"
+        alt={name}
+        fill
+        className="object-cover"
+      />
+    </div>
+    <h3 className="text-xl font-semibold">{name}</h3>
+    <p className="text-green-700">{role}</p>
+  </div>
+);
+
+
 export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -200,16 +216,17 @@ export default function AboutPage() {
       </section>
 
       {/* Team Structure */}
-      <section className="py-16">
-        <div className="container">
-          <div className="text-center space-y-4 mb-12">
+      <section className="py-16 bg-white">
+        <div className="container mx-auto text-center">
+          <div className="space-y-4 mb-12">
             <h2 className="text-3xl font-bold tracking-tighter">Our Team Structure</h2>
             <p className="mx-auto max-w-[700px] text-gray-600">
               DMT Acres is led by a dedicated team of professionals committed to excellence in agriculture.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Top Level - Managing Director */}
+          <div className="flex justify-center mb-16">
             <div className="text-center">
               <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
                 <Image src="/placeholder.svg?height=200&width=200" alt="Team Member" fill className="object-cover" />
@@ -217,88 +234,28 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold">Daniel Tsonga</h3>
               <p className="text-green-700">Managing Director</p>
             </div>
+          </div>
 
-            <div className="text-center">
-              <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
-                <Image src="/placeholder.svg?height=200&width=200" alt="Team Member" fill className="object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold">Mwayi Makhalila</h3>
-              <p className="text-green-700">Operations Manager</p>
-            </div>
+          {/* Second Level - 2 Members */}
+          <div className="flex flex-wrap justify-center gap-12 mb-16">
+            <TeamCard name="Mwayi Makhalila" role="Operations Manager" />
+            <TeamCard name="Angela Chinyama" role="Finance & Admin" />
+          </div>
 
-            <div className="text-center">
-              <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
-                <Image src="/placeholder.svg?height=200&width=200" alt="Team Member" fill className="object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold">Angela Chinyama</h3>
-              <p className="text-green-700">Finance & Admin</p>
-            </div>
+          {/* Third Level - 4 Members */}
+          <div className="flex flex-wrap justify-center gap-12 mb-16">
+            <TeamCard name="Dr. Malata" role="Production Manager" />
+            <TeamCard name="Carol Chingwalu" role="Sales & Marketing" />
+            <TeamCard name="Chipiliro" role="Farm Manager" />
+            <TeamCard name="-" role="Veterinary Officer" />
+          </div>
 
-            <div className="text-center">
-              <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
-                <Image src="/placeholder.svg?height=200&width=200" alt="Team Member" fill className="object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold">Dr. Malata</h3>
-              <p className="text-green-700">Production Manager</p>
-            </div>
-
-            <div className="text-center">
-              <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
-                <Image src="/placeholder.svg?height=200&width=200" alt="Team Member" fill className="object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold">Carol Chingwalu</h3>
-              <p className="text-green-700">Sales & Marketing</p>
-            </div>
-
-            <div className="text-center">
-              <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
-                <Image src="/placeholder.svg?height=200&width=200" alt="Team Member" fill className="object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold">Chipiliro</h3>
-              <p className="text-green-700">Farm Manager</p>
-            </div>
-
-            <div className="text-center">
-              <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
-                <Image src="/placeholder.svg?height=200&width=200" alt="Team Member" fill className="object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold">-</h3>
-              <p className="text-green-700">Veterinary Officer</p>
-            </div>
-
-            <div className="text-center">
-              <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
-                <Image src="/placeholder.svg?height=200&width=200" alt="Team Member" fill className="object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold">Chikondi Lifa</h3>
-              <p className="text-green-700">Geo-spartial Analyst</p>
-            </div>
-
-            <div className="text-center">
-              <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
-                <Image src="/placeholder.svg?height=200&width=200" alt="Team Member" fill className="object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold">-</h3>
-              <p className="text-green-700">Farm Supervisor</p>
-            </div>
-
-
-            <div className="text-center">
-              <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
-                <Image src="/placeholder.svg?height=200&width=200" alt="Team Member" fill className="object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold">-</h3>
-              <p className="text-green-700">Sales Executives</p>
-            </div>
-
-
-            <div className="text-center">
-              <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
-                <Image src="/placeholder.svg?height=200&width=200" alt="Team Member" fill className="object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold">-</h3>
-              <p className="text-green-700">Field Workers</p>
-            </div>
+          {/* Fourth Level - 4 Members */}
+          <div className="flex flex-wrap justify-center gap-12">
+            <TeamCard name="Chikondi Lifa" role="Geo-spartial Analyst" />
+            <TeamCard name="-" role="Farm Supervisor" />
+            <TeamCard name="-" role="Sales Executives" />
+            <TeamCard name="-" role="Field Workers" />
           </div>
         </div>
       </section>
