@@ -287,7 +287,9 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="h-5 w-5 text-green-700" />
-                    <span>Ntcheu District, Malawi</span>
+                    <span >
+                      Ntcheu District | Kasungu District, Malawi
+                    </span>
                   </div>
                 </div>
               </div>

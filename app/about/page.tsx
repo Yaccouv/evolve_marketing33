@@ -1,11 +1,11 @@
 import Image from "next/image"
 import { CheckCircle2 } from "lucide-react"
 
-const TeamCard = ({ name, role }: { name: string; role: string }) => (
+const TeamCard = ({ name, role, imageSrc }: { name: string; role: string; imageSrc: string }) => (
   <div className="text-center">
     <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
       <Image
-        src="/placeholder.svg?height=200&width=200"
+        src={imageSrc}
         alt={name}
         fill
         className="object-cover"
@@ -14,7 +14,7 @@ const TeamCard = ({ name, role }: { name: string; role: string }) => (
     <h3 className="text-xl font-semibold">{name}</h3>
     <p className="text-green-700">{role}</p>
   </div>
-);
+)
 
 
 export default function AboutPage() {
@@ -227,35 +227,30 @@ export default function AboutPage() {
 
           {/* Top Level - Managing Director */}
           <div className="flex justify-center mb-16">
-            <div className="text-center">
-              <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
-                <Image src="/placeholder.svg?height=200&width=200" alt="Team Member" fill className="object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold">Daniel Tsonga</h3>
-              <p className="text-green-700">Managing Director</p>
-            </div>
+            <TeamCard name="Daniel Tsonga" role={<>Managing Director<br /> BSc in Land Management (Land Surveying)</>} imageSrc="team/DanielTsonga.jpg" />
           </div>
 
-          {/* Second Level - 2 Members */}
-          <div className="flex flex-wrap justify-center gap-12 mb-16">
-            <TeamCard name="Mwayi Makhalila" role="Operations Manager" />
-            <TeamCard name="Angela Chinyama" role="Finance & Admin" />
+          {/* Second Level */}
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-16">
+            <TeamCard name="Mwayi Makhalila" role="Operations Manager" imageSrc="/team/default.jpg" />
+            <TeamCard name="Angela Chinyama" role="Finance & Admin" imageSrc="/team/default.jpg" />
           </div>
 
-          {/* Third Level - 4 Members */}
-          <div className="flex flex-wrap justify-center gap-12 mb-16">
-            <TeamCard name="Dr. Malata" role="Production Manager" />
-            <TeamCard name="Carol Chingwalu" role="Sales & Marketing" />
-            <TeamCard name="Chipiliro" role="Farm Manager" />
-            <TeamCard name="-" role="Veterinary Officer" />
+          {/* Third Level */}
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-16">
+            <TeamCard name="Dr. Malata" role="Production Manager" imageSrc="/team/default.jpg" />
+            <TeamCard name="Carol Chingwalu" role="Sales & Marketing" imageSrc="/team/default.jpg" />
+            <TeamCard name="Chipiliro" role="Farm Manager" imageSrc="/team/default.jpg" />
+            <TeamCard name="-" role="Veterinary Officer" imageSrc="/team/default.jpg" />
           </div>
 
-          {/* Fourth Level - 4 Members */}
-          <div className="flex flex-wrap justify-center gap-12">
-            <TeamCard name="Chikondi Lifa" role="Geo-spartial Analyst" />
-            <TeamCard name="-" role="Farm Supervisor" />
-            <TeamCard name="-" role="Sales Executives" />
-            <TeamCard name="-" role="Field Workers" />
+          {/* Fourth Level */}
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+            <TeamCard
+              name="Chikondi Lifa" role={<>Geo-spatial Analyst <br /> BSc in Land Management (Land Surveying)</>}imageSrc="/team/chikondilifa.jpg"/>
+            <TeamCard name="-" role="Farm Supervisor" imageSrc="/team/default.jpg" />
+            <TeamCard name="-" role="Sales Executives" imageSrc="/team/default.jpg" />
+            <TeamCard name="-" role="Field Workers" imageSrc="/team/default.jpg" />
           </div>
         </div>
       </section>

@@ -6,11 +6,21 @@ import Image from "next/image"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { useRouter } from "next/navigation"
+import { useLoading } from "@/hooks/use-loading"
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
+  const router = useRouter()
+  const { setLoading } = useLoading()
 
   const closeMenu = () => setOpen(false)
+
+  const handleNavigation = (href: string) => {
+    setLoading(true)
+    setOpen(false)
+    router.push(href)
+  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,24 +36,34 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
+        <button
+          onClick={() => handleNavigation("/")}
+          className="flex items-center gap-2"
+        >
           <div className="relative h-10 w-10 overflow-hidden rounded-full">
-            <Image src="/logo.jpg?height=40&width=40" alt="DMT Acres Logo" fill className="object-cover" />
+            <Image src="/logo.jpg" alt="DMT Acres Logo" fill className="object-cover" />
           </div>
           <span className="text-xl font-bold text-green-800">DMT Acres</span>
-        </Link>
+        </button>
 
         <nav className="hidden md:flex items-center gap-6">
-          <Link href="/" className="text-sm font-medium hover:text-green-700">Home</Link>
-          <Link href="/about" className="text-sm font-medium hover:text-green-700">About Us</Link>
-          <Link href="/products" className="text-sm font-medium hover:text-green-700">Products & Services</Link>
-          <Link href="/gallery" className="text-sm font-medium hover:text-green-700">Gallery</Link>
-          <Link href="/contact" className="text-sm font-medium hover:text-green-700">Contact</Link>
+          {["/", "/about", "/products", "/gallery", "/contact"].map((path, i) => (
+            <button
+              key={path}
+              onClick={() => handleNavigation(path)}
+              className="text-sm font-medium hover:text-green-700"
+            >
+              {["Home", "About Us", "Products & Services", "Gallery", "Contact"][i]}
+            </button>
+          ))}
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button asChild className="hidden md:flex bg-green-700 hover:bg-green-800">
-            <Link href="/contact">Get In Touch</Link>
+          <Button
+            onClick={() => handleNavigation("/contact")}
+            className="hidden md:flex bg-green-700 hover:bg-green-800"
+          >
+            Get In Touch
           </Button>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -56,23 +76,20 @@ export function SiteHeader() {
 
             <SheetContent side="right">
               <nav className="flex flex-col gap-4 mt-8">
-                <Link href="/" className="text-lg font-medium hover:text-green-700" onClick={closeMenu}>
-                  Home
-                </Link>
-                <Link href="/about" className="text-lg font-medium hover:text-green-700" onClick={closeMenu}>
-                  About Us
-                </Link>
-                <Link href="/products" className="text-lg font-medium hover:text-green-700" onClick={closeMenu}>
-                  Products & Services
-                </Link>
-                <Link href="/gallery" className="text-lg font-medium hover:text-green-700" onClick={closeMenu}>
-                  Gallery
-                </Link>
-                <Link href="/contact" className="text-lg font-medium hover:text-green-700" onClick={closeMenu}>
-                  Contact
-                </Link>
-                <Button asChild className="mt-4 bg-green-700 hover:bg-green-800" onClick={closeMenu}>
-                  <Link href="/contact">Get In Touch</Link>
+                {["/", "/about", "/products", "/gallery", "/contact"].map((path, i) => (
+                  <button
+                    key={path}
+                    onClick={() => handleNavigation(path)}
+                    className="text-lg font-medium hover:text-green-700 text-left"
+                  >
+                    {["Home", "About Us", "Products & Services", "Gallery", "Contact"][i]}
+                  </button>
+                ))}
+                <Button
+                  onClick={() => handleNavigation("/contact")}
+                  className="mt-4 bg-green-700 hover:bg-green-800"
+                >
+                  Get In Touch
                 </Button>
               </nav>
             </SheetContent>

@@ -43,14 +43,17 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-green-700" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">Location</h3>
-                    <p className="text-gray-600">Ntcheu District, Malawi</p>
-                  </div>
-                </div>
+  <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
+    <MapPin className="h-6 w-6 text-green-700" />
+  </div>
+  <div>
+    <h3 className="font-semibold">Location</h3>
+    <p className="text-gray-600">
+      Ntcheu District | Kasungu District, Malawi
+    </p>
+  </div>
+</div>
+
               </div>
 
               <div className="space-y-4">
