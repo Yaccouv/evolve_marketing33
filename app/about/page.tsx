@@ -215,45 +215,66 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Structure */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto text-center">
-          <div className="space-y-4 mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter">Our Team Structure</h2>
-            <p className="mx-auto max-w-[700px] text-gray-600">
-              DMT Acres is led by a dedicated team of professionals committed to excellence in agriculture.
-            </p>
-          </div>
+     {/* Team Structure */}
+<section className="py-16 bg-white">
+  <div className="container mx-auto text-center">
+    <div className="space-y-4 mb-12">
+      <h2 className="text-3xl font-bold tracking-tighter">Our Team Structure</h2>
+      <p className="mx-auto max-w-[700px] text-gray-600">
+        DMT Acres is led by a dedicated team of professionals committed to excellence in agriculture.
+      </p>
+    </div>
 
-          {/* Top Level - Managing Director */}
-          <div className="flex justify-center mb-16">
-            <TeamCard name="Daniel Tsonga" role={<>Managing Director<br /> BSc in Land Management (Land Surveying)</>} imageSrc="team/DanielTsonga.jpg" />
-          </div>
+    {/* Third Level */}
+    <div className="flex flex-wrap justify-start gap-8 md:gap-12 mb-16">
+      <TeamCard
+        name="Daniel Tsonga"
+        role={
+          <>
+            Managing Director<br />
+            BSc in Land Management<br />
+            (Land Surveying)
+          </>
+        }
+        imageSrc="/team/DanielTsonga.jpg"
+      />
+      <TeamCard
+        name="Mwayi Tsonga"
+        role={
+          <>
+            Deputy Director<br />
+            Masters of Business Administration<br />
+            (Strategic Marketing)
+          </>
+        }
+        imageSrc="/team/MwayiTsonga.jpg"
+      />
+      <TeamCard name="Mwayi Makhalila" role="Operations Manager" imageSrc="/team/default.jpg" />
+      <TeamCard name="Angela Chinyama" role="Finance & Admin" imageSrc="/team/default.jpg" />
+      <TeamCard name="Dr. Malata" role="Production Manager" imageSrc="/team/default.jpg" />
+      <TeamCard name="Carol Chingwalu" role="Sales & Marketing" imageSrc="/team/default.jpg" />
+      <TeamCard name="Chipiliro" role="Farm Manager" imageSrc="/team/default.jpg" />
+      <TeamCard
+        name="Chikondi Lifa"
+        role={
+          <>
+            Agro-spatial Analyst<br />
+            BSc in Land Management<br />
+            (Land Surveying)
+          </>
+        }
+        imageSrc="/team/chikondilifa.jpg"
+      />
+      {/* Uncomment if needed:
+      <TeamCard name="-" role="Veterinary Officer" imageSrc="/team/default.jpg" />
+      <TeamCard name="-" role="Farm Supervisor" imageSrc="/team/default.jpg" />
+      <TeamCard name="-" role="Sales Executives" imageSrc="/team/default.jpg" />
+      <TeamCard name="-" role="Field Workers" imageSrc="/team/default.jpg" />
+      */}
+    </div>
+  </div>
+</section>
 
-          {/* Second Level */}
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-16">
-            <TeamCard name="Mwayi Makhalila" role="Operations Manager" imageSrc="/team/default.jpg" />
-            <TeamCard name="Angela Chinyama" role="Finance & Admin" imageSrc="/team/default.jpg" />
-          </div>
-
-          {/* Third Level */}
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-16">
-            <TeamCard name="Dr. Malata" role="Production Manager" imageSrc="/team/default.jpg" />
-            <TeamCard name="Carol Chingwalu" role="Sales & Marketing" imageSrc="/team/default.jpg" />
-            <TeamCard name="Chipiliro" role="Farm Manager" imageSrc="/team/default.jpg" />
-            <TeamCard name="-" role="Veterinary Officer" imageSrc="/team/default.jpg" />
-          </div>
-
-          {/* Fourth Level */}
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-            <TeamCard
-              name="Chikondi Lifa" role={<>Geo-spatial Analyst <br /> BSc in Land Management (Land Surveying)</>}imageSrc="/team/chikondilifa.jpg"/>
-            <TeamCard name="-" role="Farm Supervisor" imageSrc="/team/default.jpg" />
-            <TeamCard name="-" role="Sales Executives" imageSrc="/team/default.jpg" />
-            <TeamCard name="-" role="Field Workers" imageSrc="/team/default.jpg" />
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
