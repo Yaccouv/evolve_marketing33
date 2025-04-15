@@ -27,7 +27,7 @@ export default function Home() {
             </h1>
             <p className="mx-auto max-w-[700px] text-lg text-gray-200 md:text-xl">
               DMT Acres is a dynamic farming enterprise in Ntcheu District, Malawi, specializing in poultry farming,
-              crop production, and organic manure manufacturing.
+              crop production, and organic fertilizer manufacturing.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
               <Button asChild size="lg" className="bg-green-700 hover:bg-green-800">
@@ -188,7 +188,7 @@ export default function Home() {
                 />
               </div>
               <CardHeader>
-                <CardTitle>Organic Manure</CardTitle>
+                <CardTitle>Organic Fertilizer</CardTitle>
                 <CardDescription>Eco-friendly and cost-effective fertilizer production</CardDescription>
               </CardHeader>
               <CardContent>

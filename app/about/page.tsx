@@ -43,7 +43,7 @@ export default function AboutPage() {
               <p className="text-gray-600">
                 DMT Acres is a registered and dynamic farming enterprise based in Ntcheu District, Malawi. Founded in
                 2019, this agriculture farming enterprise was officially registered in April 2024, specializing in
-                poultry farming, crop production and organic manure manufacturing.
+                poultry farming, crop production and organic fertilizer manufacturing.
               </p>
               <p className="text-gray-600">
                 Our operations are guided by a passion for food security, environmental sustainability and economic
@@ -97,9 +97,9 @@ export default function AboutPage() {
               <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
                 <span className="text-2xl">🌱</span>
               </div>
-              <h3 className="text-xl font-semibold mb-4">Organic Manure Production</h3>
+              <h3 className="text-xl font-semibold mb-4">Organic Fertilizer Production</h3>
               <p className="text-gray-600">
-                As part of our commitment to environmental conservation, we produce organic manure to enhance soil
+                As part of our commitment to environmental conservation, we produce organic fertilizer to enhance soil
                 fertility and reduce reliance on chemical fertilizers, promoting eco-friendly and cost-effective manure.
               </p>
             </div>

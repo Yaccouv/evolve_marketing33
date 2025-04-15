@@ -145,14 +145,14 @@ export default function ProductsPage() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold tracking-tighter text-green-800">Organic Manure</h2>
+              <h2 className="text-3xl font-bold tracking-tighter text-green-800">Organic Fertilizer</h2>
               <p className="text-gray-600">
-                As part of our commitment to environmental conservation, we produce organic manure to enhance soil
-                fertility and reduce reliance on chemical fertilizers. Our organic manure is derived from our poultry
+                As part of our commitment to environmental conservation, we produce organic fertilizer to enhance soil
+                fertility and reduce reliance on chemical fertilizers. Our organic fertilizer is derived from our poultry
                 operations, creating a sustainable cycle within our farm.
               </p>
               <div className="space-y-3">
-                <h3 className="text-xl font-semibold">Benefits of Our Organic Manure:</h3>
+                <h3 className="text-xl font-semibold">Benefits of Our Organic Fertilizer:</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
@@ -183,7 +183,7 @@ export default function ProductsPage() {
               </div>
               <Button asChild className="gap-2 bg-green-700 hover:bg-green-800">
                 <Link href="/contact">
-                  Inquire About Our Organic Manure
+                  Inquire About Our Organic Fertilizer
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -191,7 +191,7 @@ export default function ProductsPage() {
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
               <Image
                 src="/placeholder.svg?height=400&width=600"
-                alt="DMT Acres Organic Manure"
+                alt="DMT Acres Organic Fertilizer"
                 fill
                 className="object-cover"
               />
@@ -216,7 +216,7 @@ export default function ProductsPage() {
               <h2 className="text-3xl font-bold tracking-tighter text-green-800">Training & Consultancy</h2>
               <p className="text-gray-600">
                 We offer training and consultancy services in sustainable farming practices, with a special focus on
-                organic manure production. Our goal is to empower local farmers with knowledge and skills to improve
+                organic fertilizer production. Our goal is to empower local farmers with knowledge and skills to improve
                 their agricultural practices.
               </p>
               <div className="space-y-3">
@@ -225,7 +225,7 @@ export default function ProductsPage() {
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-medium">Organic Manure Production:</span> Techniques for creating
+                      <span className="font-medium">Organic Fertilizer Production:</span> Techniques for creating
                       high-quality organic fertilizers.
                     </div>
                   </li>
@@ -324,6 +324,19 @@ export default function ProductsPage() {
             <Card className="text-center">
               <CardHeader className="pb-2">
                 <CardTitle>Individual Consumers</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="h-20 w-20 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
+                  <span className="text-3xl">👨‍👩‍👧‍👦</span>
+                </div>
+                <CardDescription>Providing nutritious food directly to families</CardDescription>
+              </CardContent>
+            </Card>
+
+
+            <Card className="text-center">
+              <CardHeader className="pb-2">
+                <CardTitle>Agro-Farm Input Machinery</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="h-20 w-20 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">

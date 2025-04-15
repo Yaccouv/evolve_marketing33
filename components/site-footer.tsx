@@ -10,7 +10,7 @@ export function SiteFooter() {
             <h3 className="text-xl font-bold">DMT Acres</h3>
             <p className="text-gray-300">
               A registered and dynamic farming enterprise based in Ntcheu District, Malawi, specializing in poultry
-              farming, crop production, and organic manure manufacturing.
+              farming, crop production, and organic fertilizer manufacturing.
             </p>
           </div>
 
@@ -45,7 +45,7 @@ export function SiteFooter() {
                 Crop Production
               </Link>
               <Link href="/products#manure" className="text-gray-300 hover:text-white">
-                Organic Manure
+                Organic Fertilizer
               </Link>
               <Link href="/products#training" className="text-gray-300 hover:text-white">
                 Training & Consultancy
