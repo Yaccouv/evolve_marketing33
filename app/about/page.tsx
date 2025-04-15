@@ -216,26 +216,26 @@ export default function AboutPage() {
       </section>
 
       <section className="py-16 bg-white">
-  <div className="max-w-7xl mx-auto px-4 text-center">
-    <div className="space-y-4 mb-12">
-      <h2 className="text-3xl font-bold tracking-tighter">Our Team Structure</h2>
-      <p className="mx-auto max-w-[700px] text-gray-600">
-        DMT Acres is led by a dedicated team of professionals committed to excellence in agriculture.
-      </p>
-    </div>
-    {/* Third Level */}
-    <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-      <TeamCard name="Daniel Tsonga" role={<>Managing Director<br /> BSc in Land Management<br />(Land Surveying)</>} imageSrc="/team/DanielTsonga.jpg" />
-      <TeamCard name="Mwayi Tsonga" role={<>Deputy Director<br /> Masters of Business Administration<br /> (Strategic Marketing)</>} imageSrc="/team/MwayiTsonga.jpg" />
-      <TeamCard name="Mwayi Makhalila" role="Operations Manager" imageSrc="/team/default.jpg" />
-      <TeamCard name="Angela Chinyama" role="Finance & Admin" imageSrc="/team/default.jpg" />
-      <TeamCard name="Dr. Malata" role="Production Manager" imageSrc="/team/default.jpg" />
-      <TeamCard name="Carol Chingwalu" role="Sales & Marketing" imageSrc="/team/default.jpg" />
-      <TeamCard name="Chipiliro" role="Farm Manager" imageSrc="/team/default.jpg" />
-      <TeamCard name="Chikondi Lifa" role={<>Agro-spatial Analyst <br /> BSc in Land Management<br />(Land Surveying)</>} imageSrc="/team/chikondilifa.jpg" />
-    </div>
-  </div>
-</section>
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="space-y-4 mb-12">
+            <h2 className="text-3xl font-bold tracking-tighter">Our Team Structure</h2>
+            <p className="mx-auto max-w-[700px] text-gray-600">
+              DMT Acres is led by a dedicated team of professionals committed to excellence in agriculture.
+            </p>
+          </div>
+          {/* Third Level */}
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
+            <TeamCard name="Daniel Tsonga" role={<>Managing Director<br /> BSc in Land Management<br />(Land Surveying)</>} imageSrc="/team/DanielTsonga.jpg" />
+            <TeamCard name="Mwayi Tsonga" role={<>Deputy Director<br /> Masters of Business Administration<br /> (Strategic Marketing)</>} imageSrc="/team/MwayiTsonga.jpg" />
+            <TeamCard name="Mwayi Makhalila" role="Operations Manager" imageSrc="/team/default.jpg" />
+            <TeamCard name="Angela Chinyama" role="Finance & Admin" imageSrc="/team/default.jpg" />
+            <TeamCard name="Dr. Malata" role="Production Manager" imageSrc="/team/default.jpg" />
+            <TeamCard name="Carol Chingwalu" role="Sales & Marketing" imageSrc="/team/default.jpg" />
+            <TeamCard name="Chipiliro" role="Farm Manager" imageSrc="/team/default.jpg" />
+            <TeamCard name="Chikondi Lifa" role={<>Agro-spatial Analyst <br /> BSc in Land Management<br />(Land Surveying)</>} imageSrc="/team/chikondilifa.jpg" />
+          </div>
+        </div>
+      </section>
 
     </div>
   )
