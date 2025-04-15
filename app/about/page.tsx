@@ -226,7 +226,7 @@ export default function AboutPage() {
     {/* Third Level */}
     <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
       <TeamCard name="Daniel Tsonga" role={<>Managing Director<br /> BSc in Land Management<br />(Land Surveying)</>} imageSrc="/team/DanielTsonga.jpg" />
-      <TeamCard name="Mwayi Tsonga" role={<>Deputy Director<br /> Masters of Business Administration (Strategic Marketing)</>} imageSrc="/team/MwayiTsonga.jpg" />
+      <TeamCard name="Mwayi Tsonga" role={<>Deputy Director<br /> Masters of Business Administration<br /> (Strategic Marketing)</>} imageSrc="/team/MwayiTsonga.jpg" />
       <TeamCard name="Mwayi Makhalila" role="Operations Manager" imageSrc="/team/default.jpg" />
       <TeamCard name="Angela Chinyama" role="Finance & Admin" imageSrc="/team/default.jpg" />
       <TeamCard name="Dr. Malata" role="Production Manager" imageSrc="/team/default.jpg" />
