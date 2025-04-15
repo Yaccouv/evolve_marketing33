@@ -232,7 +232,7 @@ export default function AboutPage() {
             <TeamCard name="Dr. Malata" role="Production Manager" imageSrc="/team/default.jpg" />
             <TeamCard name="Carol Chingwalu" role="Sales & Marketing" imageSrc="/team/default.jpg" />
             <TeamCard name="Chipiliro" role="Farm Manager" imageSrc="/team/default.jpg" />
-            <TeamCard name="Chikondi Lifa" role={<>Agro-spatial Analyst <br /> BSc in Land Management<br />(Land Surveying)</>} imageSrc="/team/chikondilifa.jpg" />
+            <TeamCard name="Chikondi Lifa" role={<>Agro-spatial Analyst <br /> BSc in Land Management<br />(Land Surveying)</>} imageSrc="/team/ChikondiLifa.jpg" />
           </div>
         </div>
       </section>
