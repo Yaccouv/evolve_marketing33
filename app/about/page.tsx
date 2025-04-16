@@ -301,7 +301,7 @@ export default function AboutPage() {
             <TeamCard name="Francisco Jonas" role="Quality Assurance Manager" grade="Bachelors of Science in Nutrition and Food Science" school={""} major="(Human Nutrition)" imageSrc="/team/francisco-jonas.jpg" />
             <TeamCard name="Omega Tsonga" role="Safety and Environmental Officer" grade="Bachelors of Science in Environmental Sciences" school={""} major="Masters in Tourism and Hotel Management (pending)" imageSrc="/team/omega-tsonga.jpg" />
             <TeamCard name="Chikondi Lifa" role="Agro-Spatial Analyst" grade="BSc in Land Management" school={""} major={"(Land Surveying)"} imageSrc="/team/ChikondiLifa.jpg" />
-            <TeamCard name="Dr. Malata" role="Production Manager" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
+            <TeamCard name="Dr. Wisdom Malata" role="Research Consultant" grade={"PhD. Social Anthropology"} school={""} major={"MA. Cultural Studies"} imageSrc="/team/dr-wisdom-malata.jpg" />
             <TeamCard name="Chipiliro" role="Farm Manager" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
             <TeamCard name="Fred Oliver Kokha" role="Agriculture officer - Crops" grade="Diploma in Agriculture and Natural Resources Management" school="LUANAR" major="Bachelors of Development Economics (pending)" imageSrc="/team/fred-oliver-kokha.jpg" />
           </div>
