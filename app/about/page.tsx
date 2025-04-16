@@ -289,8 +289,11 @@ export default function AboutPage() {
           <br /><br />
           <h4 className="text-xl font-semibold mb-2">Finance and Administration</h4><br />
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            <TeamCard name="Angela Chinyama" role="Finance & Admin" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
+            <TeamCard name="Sylvester Maluku" role="Administration Officer" grade="Bachelors of Laws (Hons) (pending)" school={""} major={""} imageSrc="/team/sylvester-maluku.jpg" />
+            <TeamCard name="Tears Bisani" role="Human Resource Manager" grade="Diploma in Human Resource Management" school={""} major={""} imageSrc="/team/tears-bisani.jpg" />
+            <TeamCard name="Angela Chinyama" role="Accountant" grade="Bcom in Financial Sciences" school={""} major="(Financial Management, Accounting, Internal Auditing)" imageSrc="/team/angela-chinyama.jpg" />
             <TeamCard name="Mwayi Makhalila" role="Operations Manager" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
+            <TeamCard name="Peace Msoza" role="Transport and Logistics Officer" grade="Bachelors of Science in Land Economy" school={""} major="(Property Management and Marketing)" imageSrc="/team/peace-msoza.jpg" />
             </div>
           <br /><br />
           <h4 className="text-xl font-semibold mb-2">Extension</h4><br />
@@ -300,6 +303,8 @@ export default function AboutPage() {
           <br /><br />
           <h4 className="text-xl font-semibold mb-2">Quality Assurance and Environmental Department</h4><br />
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
+            <TeamCard name="Francisco Jonas" role="Quality Assurance Manager" grade="Bachelors of Science in Nutrition and Food Science" school={""} major="(Human Nutrition)" imageSrc="/team/francisco-jonas.jpg" />
+            <TeamCard name="Omega Tsonga" role="Safety and Environmental Officer" grade="Bachelors of Science in Environmental Sciences" school={""} major="Masters in Tourism and Hotel Management (pending)" imageSrc="/team/omega-tsonga.jpg" />
             <TeamCard name="Chikondi Lifa" role="Agro-Spatial Analyst" grade="BSc in Land Management" school={""} major={"Land Surveying"} imageSrc="/team/ChikondiLifa.jpg" />
             <TeamCard name="Dr. Malata" role="Production Manager" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
             <TeamCard name="Chipiliro" role="Farm Manager" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
@@ -309,15 +314,16 @@ export default function AboutPage() {
           <h4 className="text-xl font-semibold mb-2">Marketing and Trade</h4><br />
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
             <TeamCard name="Carol Chingwalu" role="Marketing Officer" grade="Bachelors of Business Administration" school={""} major="(Marketing)" imageSrc="/team/carol-chingwalu.jpg" />
+            <TeamCard name="Pauline Makhalira" role="Trade Execution Officer" grade="Bachelors of Science in International Economics and Trade" school={""} major="Bachelors of Science in Computing and Information Systems" imageSrc="/team/pauline-makhalira.jpg" />
           </div>
           <br /><br />
           <h4 className="text-xl font-semibold mb-2">Research and Consultancy</h4><br />
             <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
+              <TeamCard name="Joseph Kapesi" role="Scientific Officer" grade="Bachelor of Science in Natural Resources Management (LUANAR)" school="Masters in Communication Studies (Wayne State College. Nebraska USA - pending)" major="Bachelor of Arts in Organizational Leadership and Public Relations (Wayne State College. Nebraska USA)" imageSrc="/team/joseph-kapesi.jpg" />
               <TeamCard name="Martha Kamchepera" role="Veterinary Officer" grade="Diploma in Animal Health and Production" school="Lilongwe University of Agriculture and Natural Resources" major={""} imageSrc="/team/martha-kamchepera.jpg" />
             </div>
         </div>
       </section>
-
     </div>
   )
 }
