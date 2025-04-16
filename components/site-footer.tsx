@@ -9,7 +9,7 @@ export function SiteFooter() {
           <div className="space-y-4">
             <h3 className="text-xl font-bold">DMT Acres</h3>
             <p className="text-gray-300">
-              A registered and dynamic farming enterprise based in Ntcheu District, Malawi, specializing in poultry
+              A registered and dynamic farming enterprise based in Ntcheu and Kasungu Districts, Malawi, specializing in poultry
               farming, crop production, and organic fertilizer manufacturing.
             </p>
           </div>
@@ -67,7 +67,7 @@ export function SiteFooter() {
               <div className="flex items-center gap-2">
                 <MapPin className="h-5 w-5 text-green-400" />
                 <span className="text-gray-300">
-                  Ntcheu District | Kasungu District Malawi
+                  Ntcheu and Kasungu, Malawi
                 </span>
               </div>
             </div>

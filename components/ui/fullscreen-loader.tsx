@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useLoading } from "@/hooks/use-loading"
+import Image from "next/image"
 
 export default function FullscreenLoader() {
   const { setLoading } = useLoading()
@@ -25,15 +26,15 @@ export default function FullscreenLoader() {
 
   return (
     <div className="fixed top-0 left-0 z-[1000] h-screen w-screen bg-white flex flex-col items-center justify-center">
+      <div className="relative h-12 w-24 overflow-hidden">
+        <Image src="/logo/dmt_acres_logo_white_background.png" alt="DMT Acres Logo" fill className="object-cover" />
+      </div>
       <div className="w-32 h-1 bg-gray-300 rounded-full overflow-hidden"> {/* Smaller height */}
         <div
           className="h-full bg-green-700"
           style={{ width: `${progress}%` }}
         />
       </div>
-      <p className="mt-4 text-lg font-semibold text-green-800">
-        DMT Acres
-      </p>
     </div>
   )
 }

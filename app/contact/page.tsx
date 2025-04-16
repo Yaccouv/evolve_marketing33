@@ -43,16 +43,16 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-center gap-4">
-  <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
-    <MapPin className="h-6 w-6 text-green-700" />
-  </div>
-  <div>
-    <h3 className="font-semibold">Location</h3>
-    <p className="text-gray-600">
-      Ntcheu District | Kasungu District, Malawi
-    </p>
-  </div>
-</div>
+                  <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
+                    <MapPin className="h-6 w-6 text-green-700" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Location</h3>
+                    <p className="text-gray-600">
+                      Ntcheu and Kasungu, Malawi
+                    </p>
+                  </div>
+                </div>
 
               </div>
 
@@ -127,12 +127,35 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
+      {/* Map Section */}
       <section className="py-8 pb-16">
-        <div className="container">
-          <div className="relative h-[400px] w-full rounded-lg overflow-hidden bg-gray-200 flex items-center justify-center">
-            <p className="text-gray-600 text-lg">Map of DMT Acres location in Ntcheu District, Malawi</p>
-            {/* In a real implementation, this would be replaced with an actual map component */}
+        <div className="container mx-auto grid md:grid-cols-2 gap-6">
+          {/* Ntcheu Map */}
+          <div className="rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d987426.5782745759!2d34.02811482427677!3d-14.817675509407396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18df5ab5ed31bb31%3A0xc2b8cd5e219a3196!2sNtcheu!5e0!3m2!1sen!2smw!4v1744808222057!5m2!1sen!2smw"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <p className="mt-2 text-center text-sm text-gray-700">Ntcheu, Malawi</p>
+          </div>
+
+          {/* Kasungu Map */}
+          <div className="rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995236.6678125869!2d32.807290799618336!3d-12.994655756789696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x191eea674df268a3%3A0xbdc96c7ed00b6b69!2sKasungu!5e0!3m2!1sen!2smw!4v1744808260088!5m2!1sen!2smw"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <p className="mt-2 text-center text-sm text-gray-700">Kasungu, Malawi</p>
           </div>
         </div>
       </section>

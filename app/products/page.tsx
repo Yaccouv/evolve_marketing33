@@ -12,7 +12,7 @@ export default function ProductsPage() {
       <section className="relative">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="relative h-[400px] w-full">
-          <Image src="/placeholder.svg?height=400&width=1200" alt="DMT Acres Products" fill className="object-cover" />
+          <Image src="/images/product/chicken.jpg?height=400&width=1200" alt="DMT Acres Products" fill className="object-cover" />
         </div>
         <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">Products & Services</h1>
@@ -74,7 +74,7 @@ export default function ProductsPage() {
             </div>
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/images/product/PoultryFarming.webp?height=400&width=600"
                 alt="DMT Acres Poultry"
                 fill
                 className="object-cover"
@@ -89,7 +89,7 @@ export default function ProductsPage() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1 relative h-[400px] w-full rounded-lg overflow-hidden">
-              <Image src="/placeholder.svg?height=400&width=600" alt="DMT Acres Crops" fill className="object-cover" />
+              <Image src="/images/product/CropProduction.webp?height=400&width=600" alt="DMT Acres Crops" fill className="object-cover" />
             </div>
             <div className="order-1 md:order-2 space-y-6">
               <h2 className="text-3xl font-bold tracking-tighter text-green-800">Crop Production</h2>
@@ -190,7 +190,7 @@ export default function ProductsPage() {
             </div>
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/images/product/OrganicFertilizer.webp?height=400&width=600"
                 alt="DMT Acres Organic Fertilizer"
                 fill
                 className="object-cover"
@@ -206,7 +206,7 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1 relative h-[400px] w-full rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/images/product/TrainingConsultancy.webp?height=400&width=600"
                 alt="DMT Acres Training"
                 fill
                 className="object-cover"
@@ -257,6 +257,69 @@ export default function ProductsPage() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        {/* Agro Dealing Section */}
+        <section id="agro-dealing" className="py-16">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold tracking-tighter text-green-800">Agro Dealing</h2>
+              <p className="text-gray-600">
+                We supply reliable, high-quality agricultural inputs to support farmers at every stage of the production cycle. Our goal is to empower sustainable and efficient farming through trusted products and expert advice.
+              </p>
+              <div className="space-y-3">
+                <h3 className="text-xl font-semibold">Our Agro Products & Services:</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-medium">Seeds:</span> Certified, high-yield varieties for different crops
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-medium">Fertilizers:</span> Organic and inorganic options for soil nutrition.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-medium">Crop Protection:</span> Safe pesticides and herbicides for pest and disease control.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-medium">Farming Tools:</span> Essential equipment for small to medium-scale farmers.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-medium">Advisory Support:</span> Guidance on input use, soil care, and sustainable practices
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <Button asChild className="gap-2 bg-green-700 hover:bg-green-800">
+                <Link href="/contact">
+                  Inquire About Our Agro Inputs
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+            <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+              <Image
+                src="/images/product/track.jpg?height=400&width=600"
+                alt="DMT Acres Agro Dealing"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
@@ -324,19 +387,6 @@ export default function ProductsPage() {
             <Card className="text-center">
               <CardHeader className="pb-2">
                 <CardTitle>Individual Consumers</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="h-20 w-20 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
-                  <span className="text-3xl">👨‍👩‍👧‍👦</span>
-                </div>
-                <CardDescription>Providing nutritious food directly to families</CardDescription>
-              </CardContent>
-            </Card>
-
-
-            <Card className="text-center">
-              <CardHeader className="pb-2">
-                <CardTitle>Agro-Farm Input Machinery</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="h-20 w-20 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">

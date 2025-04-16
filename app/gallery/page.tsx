@@ -3,18 +3,18 @@ import Image from "next/image"
 export default function GalleryPage() {
   // Sample gallery images - in a real implementation, these would be actual farm images
   const galleryImages = [
-    { src: "/placeholder.svg?height=300&width=400", alt: "Poultry Farm", category: "Poultry" },
-    { src: "/placeholder.svg?height=300&width=400", alt: "Maize Field", category: "Crops" },
-    { src: "/placeholder.svg?height=300&width=400", alt: "Organic Fertilizer Production", category: "Fertilizer" },
-    { src: "/placeholder.svg?height=300&width=400", alt: "Chicken Coop", category: "Poultry" },
-    { src: "/placeholder.svg?height=300&width=400", alt: "Cassava Plantation", category: "Crops" },
-    { src: "/placeholder.svg?height=300&width=400", alt: "Training Session", category: "Training" },
-    { src: "/placeholder.svg?height=300&width=400", alt: "Fresh Eggs", category: "Poultry" },
-    { src: "/placeholder.svg?height=300&width=400", alt: "Tomato Plants", category: "Crops" },
-    { src: "/placeholder.svg?height=300&width=400", alt: "Organic Fertilizer", category: "Fertilizer" },
-    { src: "/placeholder.svg?height=300&width=400", alt: "Farm Workers", category: "Team" },
-    { src: "/placeholder.svg?height=300&width=400", alt: "Cowpeas Harvest", category: "Crops" },
-    { src: "/placeholder.svg?height=300&width=400", alt: "Consultancy Session", category: "Training" },
+    { src: "/images/gallery/PoultryFarm.webp?height=300&width=400", alt: "Poultry Farm", category: "Poultry" },
+    { src: "/images/gallery/MaizeField.webp?height=300&width=400", alt: "Maize Field", category: "Crops" },
+    { src: "/images/gallery/Organic.webp?height=300&width=400", alt: "Organic Fertilizer", category: "Fertilizer" },
+    { src: "/images/gallery/ChickenCoop.webp?height=300&width=400", alt: "Chicken Coop", category: "Poultry" },
+    { src: "/images/gallery/CassavaPlantation.webp?height=300&width=400", alt: "Cassava Plantation", category: "Crops" },
+    { src: "/images/gallery/TrainingSession.webp?height=300&width=400", alt: "Training Session", category: "Training" },
+    { src: "/images/gallery/FreshEggs.webp?height=300&width=400", alt: "Fresh Eggs", category: "Poultry" },
+    { src: "images/gallery/TomatoPlants.webp?height=300&width=400", alt: "Tomato Plants", category: "Crops" },
+    { src: "/images/gallery/Organic.webp?height=300&width=400", alt: "Organic Fertilizer", category: "Fertilizer" },
+    { src: "/images/gallery/FarmWorkers.webp?height=300&width=400", alt: "Farm Workers", category: "Team" },
+    { src: "/images/gallery/CowpeasHarvest.webp?height=300&width=400", alt: "Cowpeas Harvest", category: "Crops" },
+    { src: "/images/gallery/ConsultancySession.webp?height=300&width=400", alt: "Consultancy Session", category: "Training" },
   ]
 
   return (
@@ -23,7 +23,7 @@ export default function GalleryPage() {
       <section className="relative">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="relative h-[400px] w-full">
-          <Image src="/placeholder.svg?height=400&width=1200" alt="DMT Acres Gallery" fill className="object-cover" />
+          <Image src="/images/home/CropProduction.webp?height=400&width=1200" alt="DMT Acres Gallery" fill className="object-cover" />
         </div>
         <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">Photo Gallery</h1>

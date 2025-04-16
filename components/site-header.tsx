@@ -6,12 +6,13 @@ import Image from "next/image"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 import { useLoading } from "@/hooks/use-loading"
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const router = useRouter()
+  const pathname = usePathname()
   const { setLoading } = useLoading()
 
   const closeMenu = () => setOpen(false)
@@ -33,6 +34,14 @@ export function SiteHeader() {
     return () => window.removeEventListener("resize", handleResize)
   }, [open])
 
+  const links = [
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About Us" },
+    { path: "/products", label: "Products & Services" },
+    { path: "/gallery", label: "Gallery" },
+    { path: "/contact", label: "Contact" },
+  ]
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
       <div className="container flex h-16 items-center justify-between">
@@ -40,20 +49,23 @@ export function SiteHeader() {
           onClick={() => handleNavigation("/")}
           className="flex items-center gap-2"
         >
-          <div className="relative h-10 w-10 overflow-hidden rounded-full">
-            <Image src="/logo.jpg" alt="DMT Acres Logo" fill className="object-cover" />
+          {/* <div className="relative h-10 w-10 overflow-hidden rounded-full"> */}
+          <div className="relative h-12 w-24 overflow-hidden">
+            <Image src="/logo/dmt_acres_logo_white_background.png" alt="DMT Acres Logo" fill className="object-cover" />
           </div>
-          <span className="text-xl font-bold text-green-800">DMT Acres</span>
+          {/* <span className="text-xl font-bold text-green-800">DMT Acres</span> */}
         </button>
 
         <nav className="hidden md:flex items-center gap-6">
-          {["/", "/about", "/products", "/gallery", "/contact"].map((path, i) => (
+          {links.map(({ path, label }) => (
             <button
               key={path}
               onClick={() => handleNavigation(path)}
-              className="text-sm font-medium hover:text-green-700"
+              className={`text-sm font-medium hover:text-green-700 ${
+                pathname === path ? "text-green-800 font-semibold" : ""
+              }`}
             >
-              {["Home", "About Us", "Products & Services", "Gallery", "Contact"][i]}
+              {label}
             </button>
           ))}
         </nav>
@@ -76,13 +88,15 @@ export function SiteHeader() {
 
             <SheetContent side="right">
               <nav className="flex flex-col gap-4 mt-8">
-                {["/", "/about", "/products", "/gallery", "/contact"].map((path, i) => (
+                {links.map(({ path, label }) => (
                   <button
                     key={path}
                     onClick={() => handleNavigation(path)}
-                    className="text-lg font-medium hover:text-green-700 text-left"
+                    className={`text-lg font-medium text-left hover:text-green-700 ${
+                      pathname === path ? "text-green-800 font-semibold" : ""
+                    }`}
                   >
-                    {["Home", "About Us", "Products & Services", "Gallery", "Contact"][i]}
+                    {label}
                   </button>
                 ))}
                 <Button

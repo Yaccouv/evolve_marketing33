@@ -1,9 +1,10 @@
 import Image from "next/image"
 import { CheckCircle2 } from "lucide-react"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
-const TeamCard = ({ name, role, imageSrc }: { name: string; role: string; imageSrc: string }) => (
-  <div className="text-center">
-    <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4">
+const TeamCard1 = ({ name, role, grade, school, major, imageSrc }: { name: string; role: string; grade: string; school: string; major: string; imageSrc: string }) => (
+  <div className="text-center max-w-sm mx-auto bg-white rounded-xl shadow-md overflow-hidden text-center p-6 space-y-3">
+    <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4 border-4 border-green-700">
       <Image
         src={imageSrc}
         alt={name}
@@ -11,9 +12,41 @@ const TeamCard = ({ name, role, imageSrc }: { name: string; role: string; imageS
         className="object-cover"
       />
     </div>
+    
+    <div className="w-72 mx-auto"> {/* Fixed width and centered */}
+      <h3 className="text-xl font-semibold">{name}</h3>
+      <p className="text-green-700">{role}</p>
+      {grade && grade !== "null" && <p className="text-green-700">{grade}</p>}
+      {major && major !== "null" && <p className="text-green-700">{major}</p>}
+      {school && school !== "null" && <p className="text-green-700">{school}</p>}
+    </div>
+  </div>
+)
+const TeamCard = ({ name, role, grade, school, major, imageSrc }: { name: string; role: string; grade: string; school: string; major: string; imageSrc: string }) => (
+
+<Card className="bg-white border-green-200">
+<CardHeader className="pb-2">
+  <CardTitle className="flex items-center gap-2">
+    <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4 border-green-700">
+      <Image
+        src={imageSrc}
+        alt={name}
+        fill
+        className="object-cover"
+      />
+    </div>
+  </CardTitle>
+</CardHeader>
+<CardContent>
+  <div className="w-72 mx-auto"> {/* Fixed width and centered */}
     <h3 className="text-xl font-semibold">{name}</h3>
     <p className="text-green-700">{role}</p>
+    {grade && grade !== "null" && <p className="text-green-700">{grade}</p>}
+    {major && major !== "null" && <p className="text-green-700">{major}</p>}
+    {school && school !== "null" && <p className="text-green-700">{school}</p>}
   </div>
+</CardContent>
+</Card>
 )
 
 
@@ -24,7 +57,7 @@ export default function AboutPage() {
       <section className="relative">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="relative h-[400px] w-full">
-          <Image src="/placeholder.svg?height=400&width=1200" alt="DMT Acres Farm" fill className="object-cover" />
+          <Image src="/images/home/homeBanner.webp?height=400&width=1200" alt="DMT Acres Farm" fill className="object-cover" />
         </div>
         <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">About DMT Acres</h1>
@@ -41,7 +74,7 @@ export default function AboutPage() {
             <div className="space-y-6">
               <h2 className="text-3xl font-bold tracking-tighter">Who We Are</h2>
               <p className="text-gray-600">
-                DMT Acres is a registered and dynamic farming enterprise based in Ntcheu District, Malawi. Founded in
+                DMT Acres is a registered and dynamic farming enterprise based in Ntcheu and Kasungu Districts, Malawi. Founded in
                 2019, this agriculture farming enterprise was officially registered in April 2024, specializing in
                 poultry farming, crop production and organic fertilizer manufacturing.
               </p>
@@ -52,7 +85,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-              <Image src="/placeholder.svg?height=400&width=600" alt="DMT Acres Farm" fill className="object-cover" />
+              <Image src="/images/about/about.webp?height=400&width=600" alt="DMT Acres Farm" fill className="object-cover" />
             </div>
           </div>
         </div>
@@ -69,7 +102,17 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                <span className="text-2xl">🐔</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Agro Dealing</h3>
+              <p className="text-gray-600">
+                We supply quality agricultural inputs seeds, fertilizers, crop protection, and tools to support sustainable and productive farming for small to medium-scale farmers.
+              </p>
+            </div>
+
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
                 <span className="text-2xl">🐔</span>
@@ -215,7 +258,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-green-50">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="space-y-4 mb-12">
             <h2 className="text-3xl font-bold tracking-tighter">Our Team Structure</h2>
@@ -224,16 +267,54 @@ export default function AboutPage() {
             </p>
           </div>
           {/* Third Level */}
+          <h2 className="text-xl font-semibold mb-2">Executive</h2><br />
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            <TeamCard name="Daniel Tsonga" role={<>Managing Director<br /> BSc in Land Management<br />(Land Surveying)</>} imageSrc="/team/DanielTsonga.jpg" />
-            <TeamCard name="Mwayi Tsonga" role={<>Deputy Director<br /> Masters of Business Administration<br /> (Strategic Marketing)</>} imageSrc="/team/MwayiTsonga.jpg" />
-            <TeamCard name="Mwayi Makhalila" role="Operations Manager" imageSrc="/team/default.jpg" />
-            <TeamCard name="Angela Chinyama" role="Finance & Admin" imageSrc="/team/default.jpg" />
-            <TeamCard name="Dr. Malata" role="Production Manager" imageSrc="/team/default.jpg" />
-            <TeamCard name="Carol Chingwalu" role="Sales & Marketing" imageSrc="/team/default.jpg" />
-            <TeamCard name="Chipiliro" role="Farm Manager" imageSrc="/team/default.jpg" />
-            <TeamCard name="Chikondi Lifa" role={<>Agro-spatial Analyst <br /> BSc in Land Management<br />(Land Surveying)</>} imageSrc="/team/ChikondiLifa.jpg" />
+            <TeamCard 
+              name="Daniel Tsonga" 
+              role="Managing Director"
+              grade="BSc in Land Management"
+              school={""}
+              major="(Land Surveying)"
+              imageSrc="/team/DanielTsonga.jpg" 
+              />
+            <TeamCard 
+              name="Mwayi Tsonga" 
+              role="Deputy Director"
+              grade="Masters of Business Administration"
+              school={""}
+              major="(Strategic Marketing)"
+              imageSrc="/team/MwayiTsonga.jpg"
+              />
           </div>
+          <br /><br />
+          <h4 className="text-xl font-semibold mb-2">Finance and Administration</h4><br />
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
+            <TeamCard name="Angela Chinyama" role="Finance & Admin" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
+            <TeamCard name="Mwayi Makhalila" role="Operations Manager" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
+            </div>
+          <br /><br />
+          <h4 className="text-xl font-semibold mb-2">Extension</h4><br />
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
+            <TeamCard name="Name" role="Extension Worker" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
+          </div>
+          <br /><br />
+          <h4 className="text-xl font-semibold mb-2">Quality Assurance and Environmental Department</h4><br />
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
+            <TeamCard name="Chikondi Lifa" role="Agro-Spatial Analyst" grade="BSc in Land Management" school={""} major={"Land Surveying"} imageSrc="/team/ChikondiLifa.jpg" />
+            <TeamCard name="Dr. Malata" role="Production Manager" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
+            <TeamCard name="Chipiliro" role="Farm Manager" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
+            <TeamCard name="Fred Oliver Kokha" role="Agriculture officer - Crops" grade="Diploma in Agriculture and Natural Resources Management" school="LUANAR" major="Bachelors of Development Economics (pending)" imageSrc="/team/fred-oliver-kokha.jpg" />
+          </div>
+          <br /><br />
+          <h4 className="text-xl font-semibold mb-2">Marketing and Trade</h4><br />
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
+            <TeamCard name="Carol Chingwalu" role="Marketing Officer" grade="Bachelors of Business Administration" school={""} major="(Marketing)" imageSrc="/team/carol-chingwalu.jpg" />
+          </div>
+          <br /><br />
+          <h4 className="text-xl font-semibold mb-2">Research and Consultancy</h4><br />
+            <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
+              <TeamCard name="Martha Kamchepera" role="Veterinary Officer" grade="Diploma in Animal Health and Production" school="Lilongwe University of Agriculture and Natural Resources" major={""} imageSrc="/team/martha-kamchepera.jpg" />
+            </div>
         </div>
       </section>
 

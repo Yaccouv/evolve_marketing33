@@ -13,7 +13,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="relative h-[600px] w-full">
           <Image
-            src="/placeholder.svg?height=600&width=1200"
+            src="/images/home/homeBanner.webp?height=600&width=1200"
             alt="DMT Acres Farm"
             fill
             className="object-cover"
@@ -26,14 +26,14 @@ export default function Home() {
               Sustainable Farming for a Better Future
             </h1>
             <p className="mx-auto max-w-[700px] text-lg text-gray-200 md:text-xl">
-              DMT Acres is a dynamic farming enterprise in Ntcheu District, Malawi, specializing in poultry farming,
+              DMT Acres is a dynamic farming enterprise in Ntcheu and Kasungu, Malawi, specializing in poultry farming,
               crop production, and organic fertilizer manufacturing.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
               <Button asChild size="lg" className="bg-green-700 hover:bg-green-800">
                 <Link href="/products">Our Products</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+              <Button asChild size="lg" variant="outline" className="text-green-700 border-green-700 hover:bg-green-700 hover:text-white">
                 <Link href="/contact">Contact Us</Link>
               </Button>
             </div>
@@ -121,11 +121,38 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card>
               <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="/placeholder.svg?height=200&width=400"
+                  src="/images/product/track.jpg?height=200&width=400"
+                  alt="Poultry Farming"
+                  fill
+                  className="object-cover transition-transform hover:scale-105"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle>Agro Dealing</CardTitle>
+                <CardDescription>Trusted inputs for successful farming</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>Certified seeds & fertilizers</li>
+                  <li>Pesticides & herbicides</li>
+                  <li>Farm tools & equipment</li>
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button asChild variant="outline" className="w-full">
+                  <Link href="/products#agro-dealing">Learn More</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+
+            <Card>
+              <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
+                <Image
+                  src="/images/home/PoultryFarming.webp?height=200&width=400"
                   alt="Poultry Farming"
                   fill
                   className="object-cover transition-transform hover:scale-105"
@@ -153,7 +180,7 @@ export default function Home() {
             <Card>
               <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="/placeholder.svg?height=200&width=400"
+                  src="/images/home/CropProduction.webp?height=200&width=400"
                   alt="Crop Production"
                   fill
                   className="object-cover transition-transform hover:scale-105"
@@ -181,7 +208,7 @@ export default function Home() {
             <Card>
               <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="/placeholder.svg?height=200&width=400"
+                  src="/images/home/OrganicFertilizer.webp?height=200&width=400"
                   alt="Organic Manure"
                   fill
                   className="object-cover transition-transform hover:scale-105"
@@ -288,7 +315,7 @@ export default function Home() {
                   <div className="flex items-center gap-2">
                     <MapPin className="h-5 w-5 text-green-700" />
                     <span >
-                      Ntcheu District | Kasungu District, Malawi
+                      Ntcheu and Kasungu, Malawi
                     </span>
                   </div>
                 </div>
