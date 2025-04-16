@@ -301,7 +301,6 @@ export default function AboutPage() {
             <TeamCard name="Francisco Jonas" role="Quality Assurance Manager" grade="Bachelors of Science in Nutrition and Food Science" school={""} major="(Human Nutrition)" imageSrc="/team/francisco-jonas.jpg" />
             <TeamCard name="Omega Tsonga" role="Safety and Environmental Officer" grade="Bachelors of Science in Environmental Sciences" school={""} major="Masters in Tourism and Hotel Management (pending)" imageSrc="/team/omega-tsonga.jpg" />
             <TeamCard name="Chikondi Lifa" role="Agro-Spatial Analyst" grade="BSc in Land Management" school={""} major={"(Land Surveying)"} imageSrc="/team/ChikondiLifa.jpg" />
-            <TeamCard name="Dr. Wisdom Malata" role="Research Consultant" grade={"PhD. Social Anthropology"} school={""} major={"MA. Cultural Studies"} imageSrc="/team/dr-wisdom-malata.jpg" />
             <TeamCard name="Chipiliro" role="Farm Manager" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
             <TeamCard name="Fred Oliver Kokha" role="Agriculture officer - Crops" grade="Diploma in Agriculture and Natural Resources Management" school="LUANAR" major="Bachelors of Development Economics (pending)" imageSrc="/team/fred-oliver-kokha.jpg" />
           </div>
@@ -314,6 +313,7 @@ export default function AboutPage() {
           <br /><br />
           <h4 className="text-xl font-semibold mb-2">Research and Consultancy</h4><br />
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
+            <TeamCard name="Dr. Wisdom Malata" role="Research Consultant" grade={"PhD. Social Anthropology"} school={""} major={"MA. Cultural Studies"} imageSrc="/team/dr-wisdom-malata.jpg" />
             <TeamCard name="Joseph Kapesi" role="Scientific Officer" grade="Bachelor of Science in Natural Resources Management (LUANAR)" school="Masters in Communication Studies (Wayne State College. Nebraska USA - pending)" major="Bachelor of Arts in Organizational Leadership and Public Relations (Wayne State College. Nebraska USA)" imageSrc="/team/joseph-kapesi.jpg" />
             <TeamCard name="Martha Kamchepera" role="Veterinary Officer" grade="Diploma in Animal Health and Production" school="Lilongwe University of Agriculture and Natural Resources" major={""} imageSrc="/team/martha-kamchepera.jpg" />
           </div>
