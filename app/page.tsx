@@ -56,7 +56,7 @@ export default function Home() {
           loop={true}
           pagination={{ clickable: true }}
           navigation={true}
-          className="relative h-[600px] w-full z-0"
+          className="relative h-[600px] w-full z-0 text-green-600"
         >
           {['/images/banner.jpg', '/images/cattle3.jpg', '/images/banana3.jpg'].map((src, idx) => (
             <SwiperSlide key={idx}>
