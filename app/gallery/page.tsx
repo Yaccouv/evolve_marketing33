@@ -3,18 +3,30 @@ import Image from "next/image"
 export default function GalleryPage() {
   // Sample gallery images - in a real implementation, these would be actual farm images
   const galleryImages = [
-    { src: "/images/gallery/PoultryFarm.webp?height=300&width=400", alt: "Poultry Farm", category: "Poultry" },
-    { src: "/images/gallery/MaizeField.webp?height=300&width=400", alt: "Maize Field", category: "Crops" },
-    { src: "/images/gallery/Organic.webp?height=300&width=400", alt: "Organic Fertilizer", category: "Fertilizer" },
-    { src: "/images/gallery/ChickenCoop.webp?height=300&width=400", alt: "Chicken Coop", category: "Poultry" },
-    { src: "/images/gallery/CassavaPlantation.webp?height=300&width=400", alt: "Cassava Plantation", category: "Crops" },
-    { src: "/images/gallery/TrainingSession.webp?height=300&width=400", alt: "Training Session", category: "Training" },
-    { src: "/images/gallery/FreshEggs.webp?height=300&width=400", alt: "Fresh Eggs", category: "Poultry" },
-    { src: "images/gallery/TomatoPlants.webp?height=300&width=400", alt: "Tomato Plants", category: "Crops" },
-    { src: "/images/gallery/Organic.webp?height=300&width=400", alt: "Organic Fertilizer", category: "Fertilizer" },
-    { src: "/images/gallery/FarmWorkers.webp?height=300&width=400", alt: "Farm Workers", category: "Team" },
-    { src: "/images/gallery/CowpeasHarvest.webp?height=300&width=400", alt: "Cowpeas Harvest", category: "Crops" },
-    { src: "/images/gallery/ConsultancySession.webp?height=300&width=400", alt: "Consultancy Session", category: "Training" },
+    { src: "/images/chicken1.jpg?height=300&width=400", alt: "Poultry Farm", category: "Poultry" },
+    { src: "/images/chicken2.jpg?height=300&width=400", alt: "Poultry Farm", category: "Poultry" },
+    { src: "/images/chicken3.jpg?height=300&width=400", alt: "Poultry Farm", category: "Poultry" },
+    { src: "/images/chicken4.jpg?height=300&width=400", alt: "Poultry Farm", category: "Poultry" },
+    { src: "/images/chicken5.jpg?height=300&width=400", alt: "Poultry Farm", category: "Poultry" },
+    { src: "/images/chicken6.jpg?height=300&width=400", alt: "Poultry Farm", category: "Poultry" },
+    { src: "/images/maize.jpg?height=300&width=400", alt: "Maize Field", category: "Crops" },
+    { src: "/images/maize3.jpg?height=300&width=400", alt: "Maize Field", category: "Crops" },
+    { src: "/images/maize2.jpg?height=300&width=400", alt: "Farm Workers", category: "Team" },
+    { src: "/images/banana1.jpg?height=300&width=400", alt: "Banana Field", category: "Crops" },
+    { src: "/images/banana2.jpg?height=300&width=400", alt: "Banana Field", category: "Crops" },
+    { src: "/images/banana3.jpg?height=300&width=400", alt: "Banana Field", category: "Crops" },
+    { src: "/images/banana4.jpg?height=300&width=400", alt: "Banana Field", category: "Crops" },
+    { src: "/images/irrigation.jpg?height=300&width=400", alt: "Irrigation", category: "Irrigation" },
+    { src: "/images/organic.jpg?height=300&width=400", alt: "Organic Fertilizer", category: "Fertilizer" },
+    { src: "/images/organic2.jpg?height=300&width=400", alt: "Organic Fertilizer", category: "Fertilizer" },
+    { src: "/images/organic3.jpg?height=300&width=400", alt: "Organic Fertilizer", category: "Fertilizer" },
+    { src: "/images/organic4.jpg?height=300&width=400", alt: "Organic Fertilizer", category: "Fertilizer" },
+    { src: "/images/organic5.jpg?height=300&width=400", alt: "Organic Fertilizer", category: "Fertilizer" },
+    { src: "/images/organic6.jpg?height=300&width=400", alt: "Organic Fertilizer", category: "Fertilizer" },
+    { src: "/images/organic7.jpg?height=300&width=400", alt: "Organic Fertilizer", category: "Fertilizer" },
+    { src: "/images/cattle.jpg?height=300&width=400", alt: "Cattle Farming", category: "Cattle" },
+    { src: "/images/cattle1.jpg?height=300&width=400", alt: "Cattle Farming", category: "Cattle" },
+    { src: "/images/cattle3.jpg?height=300&width=400", alt: "Cattle Farming", category: "Cattle" },
   ]
 
   return (
@@ -23,7 +35,7 @@ export default function GalleryPage() {
       <section className="relative">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="relative h-[400px] w-full">
-          <Image src="/images/home/CropProduction.webp?height=400&width=1200" alt="DMT Acres Gallery" fill className="object-cover" />
+          <Image src="/images/banner.jpg?height=400&width=1200" alt="DMT Acres Gallery" fill className="object-cover" />
         </div>
         <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">Photo Gallery</h1>

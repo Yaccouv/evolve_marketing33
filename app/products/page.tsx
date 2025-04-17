@@ -12,7 +12,7 @@ export default function ProductsPage() {
       <section className="relative">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="relative h-[400px] w-full">
-          <Image src="/images/product/chicken.jpg?height=400&width=1200" alt="DMT Acres Products" fill className="object-cover" />
+          <Image src="/images/maize3.jpg?height=400&width=1200" alt="DMT Acres Products" fill className="object-cover" />
         </div>
         <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">Products & Services</h1>
@@ -74,7 +74,7 @@ export default function ProductsPage() {
             </div>
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
               <Image
-                src="/images/product/PoultryFarming.webp?height=400&width=600"
+                src="/images/chicken3.jpg?height=400&width=600"
                 alt="DMT Acres Poultry"
                 fill
                 className="object-cover"
@@ -89,7 +89,7 @@ export default function ProductsPage() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1 relative h-[400px] w-full rounded-lg overflow-hidden">
-              <Image src="/images/product/CropProduction.webp?height=400&width=600" alt="DMT Acres Crops" fill className="object-cover" />
+              <Image src="/images/maize3.jpg?height=400&width=600" alt="DMT Acres Crops" fill className="object-cover" />
             </div>
             <div className="order-1 md:order-2 space-y-6">
               <h2 className="text-3xl font-bold tracking-tighter text-green-800">Crop Production</h2>
@@ -190,7 +190,7 @@ export default function ProductsPage() {
             </div>
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
               <Image
-                src="/images/product/OrganicFertilizer.webp?height=400&width=600"
+                src="/images/organic6.jpg?height=400&width=600"
                 alt="DMT Acres Organic Fertilizer"
                 fill
                 className="object-cover"
@@ -206,7 +206,7 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1 relative h-[400px] w-full rounded-lg overflow-hidden">
               <Image
-                src="/images/product/TrainingConsultancy.webp?height=400&width=600"
+                src="/images/cattle1.jpg?height=400&width=600"
                 alt="DMT Acres Training"
                 fill
                 className="object-cover"
@@ -315,7 +315,7 @@ export default function ProductsPage() {
             </div>
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
               <Image
-                src="/images/product/track.jpg?height=400&width=600"
+                src="/images/banana1.jpg?height=400&width=600"
                 alt="DMT Acres Agro Dealing"
                 fill
                 className="object-cover"

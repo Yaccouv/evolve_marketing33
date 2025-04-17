@@ -1,3 +1,10 @@
+"use client"
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Leaf, MapPin, Phone, Mail } from "lucide-react"
@@ -9,7 +16,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="relative">
+      {/* <section className="relative">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="relative h-[600px] w-full">
           <Image
@@ -34,6 +41,57 @@ export default function Home() {
                 <Link href="/products">Our Products</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-green-700 border-green-700 hover:bg-green-700 hover:text-white">
+                <Link href="/contact">Contact Us</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      <section className="relative">
+        <div className="absolute inset-0 bg-black/60 z-10" />
+        <Swiper
+          modules={[Autoplay, Pagination, Navigation]}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          loop={true}
+          pagination={{ clickable: true }}
+          navigation={true}
+          className="relative h-[600px] w-full z-0"
+        >
+          {['/images/banner.jpg', '/images/cattle3.jpg', '/images/banana3.jpg'].map((src, idx) => (
+            <SwiperSlide key={idx}>
+              <div className="relative h-[600px] w-full">
+                <Image
+                  src={`${src}?height=600&width=1200`}
+                  alt={`Slide ${idx + 1}`}
+                  fill
+                  className="object-cover"
+                  priority={idx === 0}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
+          <div className="max-w-3xl space-y-4">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+              Sustainable Farming for a Better Future
+            </h1>
+            <p className="mx-auto max-w-[700px] text-lg text-gray-200 md:text-xl">
+              DMT Acres is a dynamic farming enterprise in Ntcheu and Kasungu, Malawi, specializing in poultry farming,
+              crop production, and organic fertilizer manufacturing.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+              <Button asChild size="lg" className="bg-green-700 hover:bg-green-800">
+                <Link href="/products">Our Products</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="text-green-700 border-green-700 hover:bg-green-700 hover:text-white"
+              >
                 <Link href="/contact">Contact Us</Link>
               </Button>
             </div>
@@ -125,7 +183,7 @@ export default function Home() {
             <Card>
               <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="/images/product/track.jpg?height=200&width=400"
+                  src="/images/organic4.jpg?height=200&width=400"
                   alt="Poultry Farming"
                   fill
                   className="object-cover transition-transform hover:scale-105"
@@ -152,7 +210,7 @@ export default function Home() {
             <Card>
               <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="/images/home/PoultryFarming.webp?height=200&width=400"
+                  src="/images/chicken3.jpg?height=200&width=400"
                   alt="Poultry Farming"
                   fill
                   className="object-cover transition-transform hover:scale-105"
@@ -180,7 +238,7 @@ export default function Home() {
             <Card>
               <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="/images/home/CropProduction.webp?height=200&width=400"
+                  src="/images/maize2.jpg?height=200&width=400"
                   alt="Crop Production"
                   fill
                   className="object-cover transition-transform hover:scale-105"
@@ -208,7 +266,7 @@ export default function Home() {
             <Card>
               <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="/images/home/OrganicFertilizer.webp?height=200&width=400"
+                  src="/images/organic7.jpg?height=200&width=400"
                   alt="Organic Manure"
                   fill
                   className="object-cover transition-transform hover:scale-105"

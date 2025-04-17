@@ -57,7 +57,7 @@ export default function AboutPage() {
       <section className="relative">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="relative h-[400px] w-full">
-          <Image src="/images/home/homeBanner.webp?height=400&width=1200" alt="DMT Acres Farm" fill className="object-cover" />
+          <Image src="/images/banana4.jpg?height=400&width=1200" alt="DMT Acres Farm" fill className="object-cover" />
         </div>
         <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">About DMT Acres</h1>
@@ -85,7 +85,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-              <Image src="/images/about/about.webp?height=400&width=600" alt="DMT Acres Farm" fill className="object-cover" />
+              <Image src="/images/chicken3.jpg?height=400&width=600" alt="DMT Acres Farm" fill className="object-cover" />
             </div>
           </div>
         </div>
