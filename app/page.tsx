@@ -253,6 +253,9 @@ export default function Home() {
                   <li>Maize</li>
                   <li>Cowpeas</li>
                   <li>Cassava</li>
+                  <li>Bananas</li>
+                  <li>Plantains</li>
+                  <li>Sugarcane</li>
                   <li>Tomatoes and Garlic</li>
                 </ul>
               </CardContent>
