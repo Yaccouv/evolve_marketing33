@@ -30,7 +30,7 @@ export default function Home() {
         <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              Sustainable Farming for a Better Future
+              Sustainable Farming for a Thriving Future
             </h1>
             <p className="mx-auto max-w-[700px] text-lg text-gray-200 md:text-xl">
               DMT Acres is a dynamic farming enterprise in Ntcheu and Kasungu, Malawi, specializing in poultry farming,
