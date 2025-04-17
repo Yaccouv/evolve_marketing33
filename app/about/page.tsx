@@ -287,8 +287,8 @@ export default function AboutPage() {
               />
           </div>
           <br /><br />
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
           <h4 className="text-xl font-semibold mb-2">Finance and Administration</h4><br />
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
             <TeamCard name="Sylvester Maluku" role="Administrator" grade="Bachelors of Laws (Hons) (pending)" school={""} major={""} imageSrc="/team/sylvester-maluku.jpg" />
             <TeamCard name="Tears Bisani" role="Human Resource Manager" grade="Diploma in Human Resource Management" school={""} major={""} imageSrc="/team/tears-bisani.jpg" />
             <TeamCard name="Angela Chinyama" role="Accountant" grade="Bcom in Financial Sciences" school={""} major="(Financial Management, Accounting, Internal Auditing)" imageSrc="/team/angela-chinyama.jpg" />
@@ -325,7 +325,7 @@ export default function AboutPage() {
             <TeamCard name="Martha Kamchepera" role="Veterinary Manager" grade="Diploma in Animal Health and Production" school="Lilongwe University of Agriculture and Natural Resources" major={""} imageSrc="/team/martha-kamchepera.jpg" />
             <TeamCard name="Chikondi Lifa" role="Agro-Spatial Analyst" grade="BSc in Land Management" school={""} major={"(Land Surveying)"} imageSrc="/team/chikondi-lifa.jpg" />
             <TeamCard name="Louis Makhiringa" role="Irrigation Officer" grade={"Bachelor of Science in Irrigation Engineering (LUANAR)"} school={""} major={""} imageSrc="/team/louis-makhiringa.jpg" />
-            <TeamCard name="Chipiliro Chingwembere" role="Farm Manager" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
+            <TeamCard name="Chipiliro Chingwembere" role="Farm Manager" grade={"Malawi School Certficate of Education"} school={""} major={""} imageSrc="/team/chipiliro-chingwembere.jpg" />
           </div>
         </div>
       </section>
