@@ -287,40 +287,45 @@ export default function AboutPage() {
               />
           </div>
           <br /><br />
-          <h4 className="text-xl font-semibold mb-2">Finance and Administration</h4><br />
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            <TeamCard name="Sylvester Maluku" role="Administration Officer" grade="Bachelors of Laws (Hons) (pending)" school={""} major={""} imageSrc="/team/sylvester-maluku.jpg" />
+          <h4 className="text-xl font-semibold mb-2">Finance and Administration</h4><br />
+            <TeamCard name="Sylvester Maluku" role="Administrator" grade="Bachelors of Laws (Hons) (pending)" school={""} major={""} imageSrc="/team/sylvester-maluku.jpg" />
             <TeamCard name="Tears Bisani" role="Human Resource Manager" grade="Diploma in Human Resource Management" school={""} major={""} imageSrc="/team/tears-bisani.jpg" />
             <TeamCard name="Angela Chinyama" role="Accountant" grade="Bcom in Financial Sciences" school={""} major="(Financial Management, Accounting, Internal Auditing)" imageSrc="/team/angela-chinyama.jpg" />
-            <TeamCard name="Mwayi Makhalila" role="Operations Manager" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
-            <TeamCard name="Peace Msoza" role="Transport and Logistics Officer" grade="Bachelors of Science in Land Economy" school={""} major="(Property Management and Marketing)" imageSrc="/team/peace-msoza.jpg" />
+            <TeamCard name="Edward Mbesa" role="Operations Manager" grade={"Bachelor of Social Sciences (Development Studies) CU"} school={""} major={"Masters of Arts in Political Science (pending) CHANCO"} imageSrc="/team/edward-mbesa.jpg" />
+            <TeamCard name="Peace Msoza" role="Transport and Logistics Manager" grade="Bachelors of Science in Land Economy" school={""} major="(Property Management and Marketing)" imageSrc="/team/peace-msoza.jpg" />
             </div>
           <br /><br />
-          <h4 className="text-xl font-semibold mb-2">Quality Assurance and Environmental Department</h4><br />
+          <h4 className="text-xl font-semibold mb-2">Production and Processing Department</h4><br />
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
             <TeamCard name="Francisco Jonas" role="Quality Assurance Manager" grade="Bachelors of Science in Nutrition and Food Science" school={""} major="(Human Nutrition)" imageSrc="/team/francisco-jonas.jpg" />
-            <TeamCard name="Omega Tsonga" role="Safety and Environmental Officer" grade="Bachelors of Science in Environmental Sciences" school={""} major="Masters in Tourism and Hotel Management (pending)" imageSrc="/team/omega-tsonga.jpg" />
-            <TeamCard name="Chikondi Lifa" role="Agro-Spatial Analyst" grade="BSc in Land Management" school={""} major={"(Land Surveying)"} imageSrc="/team/ChikondiLifa.jpg" />
-            <TeamCard name="Chipiliro" role="Farm Manager" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
-            <TeamCard name="Fred Oliver Kokha" role="Agriculture officer - Crops" grade="Diploma in Agriculture and Natural Resources Management" school="LUANAR" major="Bachelors of Development Economics (pending)" imageSrc="/team/fred-oliver-kokha.jpg" />
+            <TeamCard name="Rabson Mvula" role="Productions Manager" grade="Diploma in Community Development" school={""} major="Certificate in Legal Studies" imageSrc="/team/rabson-mvula.jpg" />
           </div>
           <br /><br />
-          <h4 className="text-xl font-semibold mb-2">Marketing and Trade</h4><br />
+          <h4 className="text-xl font-semibold mb-2">Environmental Department</h4><br />
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            <TeamCard name="Carol Chingwalu" role="Marketing Officer" grade="Bachelors of Business Administration" school={""} major="(Marketing)" imageSrc="/team/carol-chingwalu.jpg" />
-            <TeamCard name="Pauline Makhalira" role="Trade Execution Officer" grade="Bachelors of Science in International Economics and Trade" school={""} major="Bachelors of Science in Computing and Information Systems" imageSrc="/team/pauline-makhalira.jpg" />
+            <TeamCard name="Omega Tsonga" role="Safety and Environmental Officer" grade="Bachelors of Science in Environmental Sciences" school={""} major="Masters in Tourism and Hotel Management (pending)" imageSrc="/team/omega-tsonga.jpg" />
           </div>
           <br /><br />
-          <h4 className="text-xl font-semibold mb-2">Research and Consultancy</h4><br />
+          <h4 className="text-xl font-semibold mb-2">Marketing Department</h4><br />
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
+            <TeamCard name="Carol Chingwalu" role="Marketing Manager" grade="Bachelors of Business Administration" school={""} major="(Marketing)" imageSrc="/team/carol-chingwalu.jpg" />
+            <TeamCard name="Pauline Makhalira" role="Trade Execution Manager" grade="Bachelors of Science in International Economics and Trade" school={""} major="Bachelors of Science in Computing and Information Systems" imageSrc="/team/pauline-makhalira.jpg" />
+          </div>
+          <br /><br />
+          <h4 className="text-xl font-semibold mb-2">Research and Consultancy Unit</h4><br />
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
             <TeamCard name="Dr. Wisdom Malata" role="Research Consultant" grade={"PhD. Social Anthropology"} school={""} major={"MA. Cultural Studies"} imageSrc="/team/dr-wisdom-malata.jpg" />
-            <TeamCard name="Joseph Kapesi" role="Scientific Officer" grade="Bachelor of Science in Natural Resources Management (LUANAR)" school="Masters in Communication Studies (Wayne State College. Nebraska USA - pending)" major="Bachelor of Arts in Organizational Leadership and Public Relations (Wayne State College. Nebraska USA)" imageSrc="/team/joseph-kapesi.jpg" />
-            <TeamCard name="Martha Kamchepera" role="Veterinary Officer" grade="Diploma in Animal Health and Production" school="Lilongwe University of Agriculture and Natural Resources" major={""} imageSrc="/team/martha-kamchepera.jpg" />
+            <TeamCard name="Joseph Kaphesi" role="Scientific Manager" grade="Bachelor of Science in Natural Resources Management (LUANAR)" school="Masters in Communication Studies (Wayne State College. Nebraska USA - pending)" major="Bachelor of Arts in Organizational Leadership and Public Relations (Wayne State College. Nebraska USA)" imageSrc="/team/joseph-kapesi.jpg" />
           </div>
           <br /><br />
-          <h4 className="text-xl font-semibold mb-2">Extension</h4><br />
+          <h4 className="text-xl font-semibold mb-2">Extension and Industrial Control System Department</h4><br />
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            <TeamCard name="Name" role="Extension Worker" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
+            <TeamCard name="Freddie Oliver Kokha" role="Agriculture Manager - Crops" grade="Diploma in Agriculture and Natural Resources Management" school="LUANAR" major="Bachelors of Development Economics (pending)" imageSrc="/team/fred-oliver-kokha.jpg" />
+            <TeamCard name="Martha Kamchepera" role="Veterinary Manager" grade="Diploma in Animal Health and Production" school="Lilongwe University of Agriculture and Natural Resources" major={""} imageSrc="/team/martha-kamchepera.jpg" />
+            <TeamCard name="Chikondi Lifa" role="Agro-Spatial Analyst" grade="BSc in Land Management" school={""} major={"(Land Surveying)"} imageSrc="/team/chikondi-lifa.jpg" />
+            <TeamCard name="Louis Makhiringa" role="Irrigation Officer" grade={"Bachelor of Science in Irrigation Engineering (LUANAR)"} school={""} major={""} imageSrc="/team/louis-makhiringa.jpg" />
+            <TeamCard name="Chipiliro Chingwembere" role="Farm Manager" grade={""} school={""} major={""} imageSrc="/team/default.jpg" />
           </div>
         </div>
       </section>
