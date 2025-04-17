@@ -129,7 +129,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-semibold mb-4">Crop Production</h3>
               <p className="text-gray-600">
-                We cultivate a variety of staple and high value crops including legumes (cowpeas), maize and cassava and
+                We cultivate a variety of staple and high value crops including Bananas, Plantains, Sugarcane, legumes (cowpeas), maize and cassava and
                 other seasonal produce like tomato and garlic. We use sustainable farming techniques to maximize yield
                 while preserving soil health.
               </p>
