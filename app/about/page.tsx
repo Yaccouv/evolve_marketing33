@@ -316,7 +316,7 @@ export default function AboutPage() {
           <h4 className="text-xl font-semibold mb-2">Research and Consultancy Unit</h4><br />
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
             <TeamCard name="Dr. Wisdom Malata" role="Research Consultant" grade={"PhD. Social Anthropology"} school={""} major={"MA. Cultural Studies"} imageSrc="/team/dr-wisdom-malata.jpg" />
-            <TeamCard name="Joseph Kaphesi" role="Scientific Manager" grade="Bachelor of Science in Natural Resources Management (LUANAR)" school="Masters in Communication Studies (Wayne State College. Nebraska USA - pending)" major="Bachelor of Arts in Organizational Leadership and Public Relations (Wayne State College. Nebraska USA)" imageSrc="/team/joseph-kapesi.jpg" />
+            <TeamCard name="Joseph Kaphesi" role="Scientific Analyst" grade="Bachelor of Science in Natural Resources Management (LUANAR)" school="Masters in Communication Studies (Wayne State College. Nebraska USA - pending)" major="Bachelor of Arts in Organizational Leadership and Public Relations (Wayne State College. Nebraska USA)" imageSrc="/team/joseph-kapesi.jpg" />
           </div>
           <br /><br />
           <h4 className="text-xl font-semibold mb-2">Extension and Industrial Control System Department</h4><br />
