@@ -304,7 +304,7 @@ export default function AboutPage() {
           <br /><br />
           <h4 className="text-xl font-semibold mb-2">Environmental Department</h4><br />
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            <TeamCard name="Omega Tsonga" role="Safety and Environmental Officer" grade="Bachelors of Science in Environmental Sciences" school={""} major="Masters in Tourism and Hotel Management (pending)" imageSrc="/team/omega-tsonga.jpg" />
+            <TeamCard name="Omega Tsonga" role="Safety and Environmental Manager" grade="Bachelors of Science in Environmental Sciences" school={""} major="Masters in Tourism and Hotel Management (pending)" imageSrc="/team/omega-tsonga.jpg" />
           </div>
           <br /><br />
           <h4 className="text-xl font-semibold mb-2">Marketing Department</h4><br />
