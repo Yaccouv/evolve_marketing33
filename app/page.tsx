@@ -13,7 +13,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="relative h-[600px] w-full">
           <Image
-            src="/images/home/homeBanner.webp?height=600&width=1200"
+            src="/images/banner.jpg?height=600&width=1200"
             alt="DMT Acres Farm"
             fill
             className="object-cover"
