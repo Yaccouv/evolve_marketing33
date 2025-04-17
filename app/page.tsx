@@ -49,7 +49,7 @@ export default function Home() {
       </section> */}
 
       <section className="relative">
-        <div className="absolute inset-0 bg-black/60 z-10" />
+        <div className="absolute inset-0 bg-black/60 z-10 text-green-600" />
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
@@ -60,7 +60,7 @@ export default function Home() {
         >
           {['/images/banner.jpg', '/images/cattle3.jpg', '/images/banana3.jpg'].map((src, idx) => (
             <SwiperSlide key={idx}>
-              <div className="relative h-[600px] w-full">
+              <div className="relative h-[600px] w-full text-green-600">
                 <Image
                   src={`${src}?height=600&width=1200`}
                   alt={`Slide ${idx + 1}`}
