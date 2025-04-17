@@ -54,7 +54,6 @@ export default function GalleryPage() {
     { src: "/videos/organic2.mp4", type: "video", alt: "Organic Fertilizer", category: "Fertilizer" },
     { src: "/videos/banana1.mp4", type: "video", alt: "Banana", category: "Crops" },
     { src: "/videos/irrigation.mp4", type: "video", alt: "Irrigation Demo", category: "Irrigation" },
-    { src: "/videos/workers.mp4", type: "video", alt: "Workers", category: "Team" },
   ]
 
   return (
