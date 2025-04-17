@@ -123,7 +123,7 @@ export default function ProductsPage() {
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-medium">Seasonal Produce:</span> Tomatoes, garlic, and other seasonal
+                      <span className="font-medium">Seasonal Produce:</span> Tomatoes, garlic, Bananas, Plantains, Sugarcane and other seasonal
                       vegetables.
                     </div>
                   </li>
