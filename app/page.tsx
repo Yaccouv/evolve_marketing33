@@ -179,7 +179,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             <Card>
               <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                 <Image
@@ -287,6 +287,34 @@ export default function Home() {
               <CardFooter>
                 <Button asChild variant="outline" className="w-full">
                   <Link href="/products#manure">Learn More</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+            
+            <Card>
+              <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
+                <Image
+                  src="/images/cattle.jpg?height=200&width=400"
+                  alt="Livestock Farming"
+                  fill
+                  className="object-cover transition-transform hover:scale-105"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle>Livestock Farming</CardTitle>
+                <CardDescription>Resilient and profitable livestock rearing</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>Goats and Cattle</li>
+                  <li>Local and improved breeds</li>
+                  <li>Grazing & zero-grazing systems</li>
+                  <li>Manure integration into crop farming</li>
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button asChild variant="outline" className="w-full">
+                  <Link href="/products#livestock">Learn More</Link>
                 </Button>
               </CardFooter>
             </Card>

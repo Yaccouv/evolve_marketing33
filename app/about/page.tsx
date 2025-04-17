@@ -102,10 +102,10 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                <span className="text-2xl">🐔</span>
+                <span className="text-2xl">🚜</span>
               </div>
               <h3 className="text-xl font-semibold mb-4">Agro Dealing</h3>
               <p className="text-gray-600">
@@ -144,6 +144,17 @@ export default function AboutPage() {
               <p className="text-gray-600">
                 As part of our commitment to environmental conservation, we produce organic fertilizer to enhance soil
                 fertility and reduce reliance on chemical fertilizers, promoting eco-friendly and cost-effective manure.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                <span className="text-2xl">🐄</span> {/* Or use 🐐 depending on your livestock */}
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Livestock Farming</h3>
+              <p className="text-gray-600">
+                We raise goats, cattle, and other livestock using sustainable and integrated farming practices. Our animals contribute 
+                to food production and organic manure, supporting soil health and community livelihoods.
               </p>
             </div>
           </div>
