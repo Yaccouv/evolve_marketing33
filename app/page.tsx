@@ -14,385 +14,234 @@ import { Button } from '@/components/ui/button'
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <section className="relative h-[600px] w-full">
-  {/* Background image with dark overlay */}
-  <div className="absolute inset-0">
-    <Image
-      src="/images/banner.jpeg"
-      alt="Hero background"
-      fill
-      className="object-cover"
-      priority
-    />
-    <div className="absolute inset-0 bg-black/60" />
-  </div>
-      {/* <section className="relative">
-        <div className="absolute inset-0 bg-black/60 z-10 text-green-600" />
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          loop={true}
-          pagination={{ clickable: true }}
-          navigation={true}
-          className="relative h-[600px] w-full z-0 text-green-600"
-        >
-          {['/images/banner.jpg', '/images/cattle3.jpg', '/images/banana3.jpg'].map((src, idx) => (
-            <SwiperSlide key={idx}>
-              <div className="relative h-[600px] w-full text-green-600">
-                <Image
-                  src={`${src}?height=600&width=1200`}
-                  alt={`Slide ${idx + 1}`}
-                  fill
-                  className="object-cover"
-                  priority={idx === 0}
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper> */}
-
-        <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
-          <div className="max-w-3xl space-y-4">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              Evolve Marketing
-            </h1>
-            <p className="mx-auto max-w-[700px] text-lg text-gray-200 md:text-xl">
-              Our Operations Aims for Advanced Integrated Marketing Communications
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-            <Button asChild size="lg" className="hover:opacity-90" style={{ backgroundColor: "#06402b" }}>
-          <Link href="#">Read More About US</Link>
-        </Button>
-        <Button
-          asChild
-          size="lg"
-          variant="outline"
-          className="border-white text-white hover:text-green-800 hover:bg-white"
-        >
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-16 bg-gray-50">
-  <div className="container space-y-12">
-    {/* <div className="text-center space-y-4">
-      <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Who We Are</h2>
-      <p className="mx-auto max-w-[700px] text-gray-600">
-        Founded in 2019 and officially registered in April 2024, DMT Acres is committed to food security,
-        environmental sustainability, and economic empowerment.
-      </p>
-    </div> */}
-
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <Card className="bg-white border shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 ease-in-out border-[#06402b]">
-  <CardHeader className="pb-2">
-    <CardTitle className="flex items-center gap-2 text-xl font-semibold text-[#06402b]">
-      <Leaf className="h-5 w-5 text-[#06402b]" />
-     Our Mission
-    </CardTitle>
-  </CardHeader>
-  <CardContent>
-    <p className="text-gray-700">
-    To project ethics beyond what
-    the industry standardize.
-    </p>
-  </CardContent>
-</Card>
-
-
-      <Card className="bg-white border shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 ease-in-out border-[#06402b]">
-  <CardHeader className="pb-2">
-    <CardTitle className="flex items-center gap-2 text-xl font-semibold text-[#06402b]">
-      <Leaf className="h-5 w-5 text-[#06402b]" />
-      Our Vision
-    </CardTitle>
-  </CardHeader>
-  <CardContent>
-    <p className="text-gray-700">
-      By transcending to a business leader status.
-    </p>
-  </CardContent>
-</Card>
-
-
-<Card className="bg-white border shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 ease-in-out border-[#06402b]">
-  <CardHeader className="pb-2">
-    <CardTitle className="flex items-center gap-2 text-xl font-semibold text-[#06402b]">
-      <Leaf className="h-5 w-5 text-[#06402b]" />
-      Our Vision
-    </CardTitle>
-  </CardHeader>
-  <CardContent>
-    <p className="text-gray-700">
-      By transcending to a business leader status.
-    </p>
-  </CardContent>
-</Card>
-
+<div className="flex flex-col">
+  <section className="relative h-[600px] w-full">
+    {/* Background Image with Overlay */}
+    <div className="absolute inset-0">
+      <Image
+        src="/images/marketing/banner.jpeg"
+        alt="Hero background"
+        fill
+        className="object-cover"
+        priority
+      />
+      <div className="absolute inset-0 bg-black/50" />
     </div>
 
-    <div className="flex justify-center pt-8">
-    <Button
-  asChild
-  variant="outline"
-  className="gap-2 border-[#06402b] text-[#06402b] hover:bg-[#06402b] hover:text-white"
->
-  <Link href="#" className="flex items-center">
-    View More
-    <ArrowRight className="h-4 w-4 text-[#06402b]" />
-  </Link>
-</Button>
+    {/* Centered Content Box */}
+    <div className="relative z-10 h-full flex items-center justify-center">
+      <div className="bg-black/70 rounded-xl px-8 py-10 text-center text-white max-w-xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Evolve Marketing</h1>
+        <p className="text-lg text-gray-200 mb-6">
+          We craft modern marketing communications that drive results and build lasting brand value.
+        </p>
+        <Link
+          href="/about"
+          className="inline-block rounded-md bg-white px-6 py-3 text-gray-900 font-semibold hover:bg-gray-200 transition"
+        >
+          Learn More About Us
+        </Link>
+      </div>
+    </div>
+  </section>
 
+
+
+
+
+
+  <section className="bg-white py-24 px-6 md:px-12 relative overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white opacity-90 pointer-events-none" />
+
+  <div className="relative max-w-7xl mx-auto space-y-20">
+    
+    {/* Header */}
+    <div className="text-center space-y-5">
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-wide uppercase">
+        About Us
+      </h2>
+      <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+        Since 2019, we've delivered purpose-driven growth, forward-thinking innovation, and human-focused solutions.
+      </p>
+    </div>
+
+    {/* Highlights - Cards */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {[
+        {
+          title: "Our Mission",
+          emoji: "🎯",
+          description: "Delivering impact beyond expectations, rooted in ethical values and human insight."
+        },
+        {
+          title: "Our Vision",
+          emoji: "🌱",
+          description: "To lead the future of sustainable innovation through collaboration and care."
+        },
+        {
+          title: "Our Values",
+          emoji: "🤝",
+          description: "We believe in trust, creativity, and a strong sense of community-driven growth."
+        }
+      ].map(({ title, emoji, description }) => (
+        <div
+          key={title}
+          className="bg-gray-50 border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300"
+        >
+          <div className="flex items-center gap-4 mb-4">
+            <div className="text-3xl">{emoji}</div>
+            <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
+          </div>
+          <p className="text-gray-600 text-base leading-relaxed">{description}</p>
+        </div>
+      ))}
+    </div>
+
+    {/* CTA */}
+    <div className="text-center">
+      <a
+        href="#"
+        className="inline-block px-10 py-3 bg-gray-900 text-white font-semibold rounded-full shadow hover:bg-gray-700 transition"
+      >
+        Discover More
+      </a>
     </div>
   </div>
 </section>
 
 
-      {/* Products & Services Preview */}
-      <section className="py-16">
-        <div className="container space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Other Areas of Focus</h2>
-            <p className="mx-auto max-w-[700px] text-gray-600">
-              Pop Culture
-            </p>
+{/* Focus Areas Section */}
+<section className="bg-black text-white py-24 px-6 md:px-12">
+  <div className="max-w-7xl mx-auto space-y-16">
+    
+    {/* Section Header */}
+    <div className="text-left md:text-center space-y-4">
+      <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+        Areas We’re Focused On
+      </h2>
+      <p className="text-base md:text-lg text-neutral-300 max-w-2xl mx-auto">
+        Elevating cultural experiences through passion, precision, and creativity.
+      </p>
+    </div>
+
+    {/* Focus Cards */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {[
+        {
+          title: "Story & Motion",
+          img: "/images/marketing/anime.jpeg",
+          desc: "Telling impactful stories through animation and motion design with depth and purpose."
+        },
+        {
+          title: "Sound Identity",
+          img: "/images/marketing/music.jpeg",
+          desc: "Capturing emotions and narratives through minimalist yet powerful audio experiences."
+        },
+        {
+          title: "Interactive Spaces",
+          img: "/images/marketing/game.jpeg",
+          desc: "Crafting engaging virtual spaces where users are part of the story — not just the audience."
+        }
+      ].map(({ title, img, desc }) => (
+        <div
+          key={title}
+          className="bg-neutral-900 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <div className="relative h-48 w-full overflow-hidden">
+            <img
+              src={img}
+              alt={title}
+              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              loading="lazy"
+            />
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card>
-              <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                <Image
-                  src="/images/anime.jpeg?height=200&width=400"
-                  alt="Poultry Farming"
-                  fill
-                  className="object-cover transition-transform hover:scale-105"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Animation</CardTitle>
-                <CardDescription>Animation issignificant on mattershaving to do withpopular culture. ﻿It isone of the moststreamed forms ofmedia, as it hasprovided us withentertainment as wellas creating lucrativeendeavors.</CardDescription>
-              </CardHeader>
-              {/* <CardContent>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Certified seeds & fertilizers</li>
-                  <li>Pesticides & herbicides</li>
-                  <li>Farm tools & equipment</li>
-                </ul>
-              </CardContent> */}
-              <CardFooter>
-                <Button asChild variant="outline" className="w-full">
-                  <Link href="#">Learn More</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card>
-              <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                <Image
-                  src="/images/music.jpeg?height=200&width=400"
-                  alt="Poultry Farming"
-                  fill
-                  className="object-cover transition-transform hover:scale-105"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Music</CardTitle>
-                <CardDescription>Not a day go bywithout listening to ofcourse music isthere when we aresad,when we areextremely hyped andto those making it, itis a rare form ofexpression some sayit's therapeutic.</CardDescription>
-              </CardHeader>
-              {/* <CardContent>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Live Chickens</li>
-                  <li>Dressed Chicken</li>
-                  <li>Day-old to months-old chicks</li>
-                  <li>Fresh farm eggs</li>
-                </ul>
-              </CardContent> */}
-              <CardFooter>
-                <Button asChild variant="outline" className="w-full">
-                  <Link href="#">Learn More</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card>
-              <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                <Image
-                  src="/images/game.jpeg?height=200&width=400"
-                  alt="Crop Production"
-                  fill
-                  className="object-cover transition-transform hover:scale-105"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Games</CardTitle>
-                <CardDescription>Games ﻿just adds alittle spice to thewhole secret recipeof popular culture,growing up playinggames was almostanyone's hobby. Andit sure did broughtexcellent excitement.</CardDescription>
-              </CardHeader>
-              {/* <CardContent>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Maize</li>
-                  <li>Cowpeas</li>
-                  <li>Cassava</li>
-                  <li>Bananas</li>
-                  <li>Plantains</li>
-                  <li>Sugarcane</li>
-                  <li>Tomatoes and Garlic</li>
-                </ul>
-              </CardContent> */}
-              <CardFooter>
-                <Button asChild variant="outline" className="w-full">
-                  <Link href="#">Learn More</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* <Card>
-              <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                <Image
-                  src="/images/organic7.jpg?height=200&width=400"
-                  alt="Organic Manure"
-                  fill
-                  className="object-cover transition-transform hover:scale-105"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Organic Fertilizer</CardTitle>
-                <CardDescription>Eco-friendly and cost-effective fertilizer production</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Nutrient-rich organic fertilizer</li>
-                  <li>Soil health enhancement</li>
-                  <li>Training and consultancy</li>
-                  <li>Sustainable farming inputs</li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button asChild variant="outline" className="w-full">
-                  <Link href="/products#manure">Learn More</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-            
-            <Card>
-              <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                <Image
-                  src="/images/cattle.jpg?height=200&width=400"
-                  alt="Livestock Farming"
-                  fill
-                  className="object-cover transition-transform hover:scale-105"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Livestock Farming</CardTitle>
-                <CardDescription>Resilient and profitable livestock rearing</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Goats and Cattle</li>
-                  <li>Local and improved breeds</li>
-                  <li>Grazing & zero-grazing systems</li>
-                  <li>Manure integration into crop farming</li>
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button asChild variant="outline" className="w-full">
-                  <Link href="/products#livestock">Learn More</Link>
-                </Button>
-              </CardFooter>
-            </Card> */}
-          </div>
-
-          <div className="flex justify-center pt-8">
-          <Button asChild size="lg" className="hover:opacity-90" style={{ backgroundColor: "#06402b" }}>
-              <Link href="#">
-                View All Products
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+          <div className="p-6">
+            <h3 className="text-xl font-semibold mb-2">{title}</h3>
+            <p className="text-neutral-300 text-sm">{desc}</p>
+            <a
+              href="#"
+              className="inline-block mt-4 text-white underline hover:text-neutral-400 transition"
+            >
+              Read More →
+            </a>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
 
-      {/* Why Choose Us */}
-      <section className="py-16 bg-green-800 text-white" style={{ backgroundColor: "#06402b" }}>
-        <div className="container space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Executive Summary</h2>
-            {/* <p className="mx-auto max-w-[700px] text-gray-200">
-              Our unique approach to farming sets us apart and ensures the highest quality products.
-            </p> */}
-          </div>
+    {/* Footer CTA */}
+    <div className="text-center pt-12">
+      <a
+        href="#"
+        className="inline-block border border-white px-8 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all duration-300"
+      >
+        View All Topics
+      </a>
+    </div>
+  </div>
+</section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-green-700/50 p-6 rounded-lg" style={{ backgroundColor: "#0a5a3d" }}>
-              <h3 className="text-xl font-semibold mb-4">The services</h3>
-              <li>
-              Evolve Marketing for advanced integrated marketing
-              communications offers cutting edge experience in Advertising,
-              public relations, copywriting, proofreading.</li>
-              ﻿
-              <li>Graphic designing and Branding Personal Branding, Corporate
-              Branding as well as Vehicle Branding.
-              </li>
-            </div>
 
-            <div className="bg-green-700/50 p-6 rounded-lg" style={{ backgroundColor: "#0a5a3d" }}>
-              <h3 className="text-xl font-semibold mb-4">The Leadership</h3>
-              <li>
-              Our philosophy on organizational leadership leans towards what
-              defines our company by using what we call the evolving effect the
-              possibility of being able to bounce back in the face of business
-              adversities and always prevailing to secure your position to your
-              targeted markets subtly imparting the upcoming marketing
-              generations.
-              </li>
-              ﻿
-            </div>
 
-            <div className="bg-green-700/50 p-6 rounded-lg" style={{ backgroundColor: "#0a5a3d" }}>
-              <h3 className="text-xl font-semibold mb-4">The Overall Industry</h3>
-              <li>
-              Marketing have been an exciting career path since the times it was
-              introduced to universities for further professional modifications.
-              The industry has evolved in numerous ways with it's operations
-              ranging from medium to large scale
-              </li>
-            </div>
+{/* Executive Summary Section */}
+<section className="py-20 bg-gray-50 text-gray-900">
+  <div className="container mx-auto px-6 space-y-12">
+    <header className="text-center max-w-xl mx-auto space-y-3">
+      <h2 className="text-4xl font-extrabold tracking-wide uppercase">
+        Executive Summary
+      </h2>
+    </header>
 
-            <div className="bg-green-700/50 p-6 rounded-lg" style={{ backgroundColor: "#0a5a3d" }}>
-              <h3 className="text-xl font-semibold mb-4">The Competitors</h3>
-              <li>
-              To call a spade a spade every individual offering the same services
-              as you is a competitor, pricing and value delivered in return and the
-              overall branding are key factors to any sort of competition
-              businesses find themselves. ﻿To outsmart competition our top
-              priority is to provide customer satisfaction .
-              </li>
-            </div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {[
+        {
+          title: "The Services",
+          content:
+            "We provide cutting-edge integrated marketing communications, including advertising, public relations, and creative branding solutions."
+        },
+        {
+          title: "Leadership Philosophy",
+          content:
+            "Our leadership fosters resilience and adaptability, empowering teams to excel in dynamic business environments."
+        },
+        {
+          title: "Industry Landscape",
+          content:
+            "The marketing industry continues to evolve, offering innovative opportunities from medium to large-scale operations."
+        },
+        {
+          title: "Competitive Edge",
+          content:
+            "Customer satisfaction and strong brand identity are key to outsmarting competition and securing market leadership."
+        },
+        {
+          title: "Financial Outlook",
+          content:
+            "Our goal is to grow sustainably, with plans to register as a public listed company to support expansion."
+        },
+        {
+          title: "Future Vision",
+          content:
+            "By 2027, we aim to diversify our interests and achieve exponential growth across multiple sectors."
+        }
+      ].map(({ title, content }) => (
+        <article
+          key={title}
+          className="bg-white border border-gray-300 rounded-2xl p-8 shadow-lg flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl"
+        >
+          <h3 className="text-2xl font-bold mb-5 border-b border-gray-200 pb-3 text-gray-800">
+            {title}
+          </h3>
+          <p className="text-gray-700 leading-relaxed flex-grow">{content}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
 
-            <div className="bg-green-700/50 p-6 rounded-lg" style={{ backgroundColor: "#0a5a3d" }}>
-              <h3 className="text-xl font-semibold mb-4">The Financial Status</h3>
-              <li>
-              Evolve Marketing yearns to transform it's day to day operations by
-              becoming registered to companies under the Public listed
-              companies.
-              </li>
-            </div>
 
-            <div className="bg-green-700/50 p-6 rounded-lg" style={{ backgroundColor: "#0a5a3d" }}>
-              <h3 className="text-xl font-semibold mb-4">Future Plans</h3>
-              <li>
-              By 2027 the agency will have diversified to other areas of interest
-              and exponential growth.
-              </li>
-            </div>
-          </div>
-        </div>
-      </section>
+
+
 
       {/* Contact Preview
       <section className="py-16">
