@@ -49,7 +49,7 @@ export function SiteHeader() {
       >
         <div className="relative h-12 w-24 overflow-hidden">
           <Image
-            src="/images/logo2.png"
+            src="/images/marketing/logo2.png"
             alt="DMT Acres Logo"
             fill
             className="object-cover"
@@ -76,7 +76,7 @@ export function SiteHeader() {
   
         <Button
           onClick={() => handleNavigation("#")}
-          className="hover:opacity-90" style={{ backgroundColor: "#06402b" }}
+          className="hover:opacity-90 px-10 py-3 bg-gray-900 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700 transition-colors duration-300"
         >
           Get In Touch
         </Button>
