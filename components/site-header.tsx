@@ -35,7 +35,11 @@ export function SiteHeader() {
   }, [open])
 
   const links = [
-    { path: "", label: "Home" },
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About Us" },
+    // { path: "/products", label: "Products & Services" },
+    // { path: "/gallery", label: "Gallery" },
+    // { path: "/contact", label: "Contact" },
   ]
 
   return (
@@ -49,7 +53,7 @@ export function SiteHeader() {
       >
         <div className="relative h-12 w-24 overflow-hidden">
           <Image
-            src="/images/logo2.png"
+            src="/images/marketing/logo2.png"
             alt="DMT Acres Logo"
             fill
             className="object-cover"
