@@ -49,7 +49,7 @@ export function SiteHeader() {
       >
         <div className="relative h-12 w-24 overflow-hidden">
           <Image
-            src="/images/marketing/logo2.png"
+            src="/images/logo2.png"
             alt="DMT Acres Logo"
             fill
             className="object-cover"
