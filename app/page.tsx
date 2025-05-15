@@ -19,7 +19,7 @@ export default function Home() {
     {/* Background Image with Overlay */}
     <div className="absolute inset-0">
       <Image
-        src="/images/marketing/banner.jpeg"
+        src="/images/banner.jpeg"
         alt="Hero background"
         fill
         className="object-cover"
@@ -129,17 +129,17 @@ export default function Home() {
       {[
         {
           title: "Story & Motion",
-          img: "/images/marketing/anime.jpeg",
+          img: "/images/anime.jpeg",
           desc: "Telling impactful stories through animation and motion design with depth and purpose."
         },
         {
           title: "Sound Identity",
-          img: "/images/marketing/music.jpeg",
+          img: "/images/music.jpeg",
           desc: "Capturing emotions and narratives through minimalist yet powerful audio experiences."
         },
         {
           title: "Interactive Spaces",
-          img: "/images/marketing/game.jpeg",
+          img: "/images/game.jpeg",
           desc: "Crafting engaging virtual spaces where users are part of the story — not just the audience."
         }
       ].map(({ title, img, desc }) => (
