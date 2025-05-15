@@ -51,292 +51,175 @@ const TeamCard = ({ name, role, grade, major, imageSrc }: { name: string; role: 
 
 export default function AboutPage() {
   return (
-    <div className="flex min-h-screen flex-col">
-      {/* Hero Section */}
-      <section className="relative">
-        <div className="absolute inset-0 bg-black/60 z-10" />
-        <div className="relative h-[400px] w-full">
-          <Image src="/images/banana4.jpg?height=400&width=1200" alt="DMT Acres Farm" fill className="object-cover" />
+    <div className="flex min-h-[500px] flex-col">
+    <section className="relative h-[500px] w-full">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/banner.jpeg"
+          alt="Hero background"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
+  
+      {/* Text Content */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Evolve Marketing</h1>
+        <p className="max-w-xl text-lg text-gray-200 mb-6">
+          We craft modern marketing communications that drive results and build lasting brand value.
+        </p>
+       
+      </div>
+    </section>
+
+  
+    <section className="bg-white py-20 px-6 md:px-16">
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+    
+    {/* Circular Image on the Left */}
+    <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+      <div className="w-72 h-72 rounded-full overflow-hidden shadow-md">
+        <Image
+          src="/images/music.jpeg"
+          alt="Evolve Marketing"
+          width={400}
+          height={400}
+          className="object-cover w-full h-full"
+        />
+      </div>
+    </div>
+
+    {/* Text Section on the Right */}
+    <div className="w-full md:w-1/2 space-y-6">
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight tracking-tight">
+        Evolve Marketing & Communications
+      </h2>
+      <p className="text-gray-600 text-lg leading-relaxed">
+        Our programs aim at a strategic Malawi that is ready to evolve in the marketing space. Evolve Marketing embraces the future — it's already within our reach. 
+      </p>
+      <p className="text-gray-600 text-lg leading-relaxed">
+        We exist to help businesses grow and thrive by crafting meaningful marketing strategies that build connection, influence decisions, and drive lasting success.
+      </p>
+      <p className="text-gray-600 text-lg leading-relaxed">
+        Marketing is more than promotion — it’s giving people a reason to choose your products and services with confidence.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section className="bg-gray-50 py-16 px-6 md:px-16">
+  <div className="max-w-4xl mx-auto space-y-10">
+    <h3 className="text-3xl font-bold text-gray-800 text-center mb-8">Core Focus Strengths</h3>
+
+    {[
+      { title: "Branding", percent: 30 },
+      { title: "Designing", percent: 40 },
+      { title: "Copywriting", percent: 50 },
+      { title: "Public Relations", percent: 60 }
+    ].map(({ title, percent }) => (
+      <div key={title} className="space-y-2">
+        <div className="flex justify-between items-center">
+          <span className="text-gray-700 font-medium">{title}</span>
+          <span className="text-gray-500 text-sm">{percent}%</span>
         </div>
-        <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">About DMT Acres</h1>
-          <p className="mx-auto max-w-[700px] mt-4 text-lg text-gray-200">
-            Learn about our journey, mission, and commitment to sustainable agriculture
-          </p>
+        <div className="w-full bg-gray-200 h-3 rounded-full overflow-hidden">
+          <div
+            className="bg-gray-800 h-full rounded-full transition-all duration-1000"
+            style={{ width: `${percent}%` }}
+          />
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
 
-      {/* Who We Are */}
-      <section className="py-16">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold tracking-tighter">Who We Are</h2>
-              <p className="text-gray-600">
-                DMT Acres is a registered and dynamic farming enterprise based in Ntcheu and Kasungu Districts, Malawi. Founded in
-                2019, this agriculture farming enterprise was officially registered in April 2024, specializing in
-                poultry farming, crop production and organic fertilizer manufacturing.
-              </p>
-              <p className="text-gray-600">
-                Our operations are guided by a passion for food security, environmental sustainability and economic
-                empowerment. Our focus is on cultivating high-quality crops and livestock while implementing innovative
-                and eco-friendly farming techniques.
-              </p>
-            </div>
-            <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-              <Image src="/images/chicken3.jpg?height=400&width=600" alt="DMT Acres Farm" fill className="object-cover" />
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Our Operations */}
-      <section className="py-16 bg-green-50">
-        <div className="container">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter">Our Operations</h2>
-            <p className="mx-auto max-w-[700px] text-gray-600">
-              DMT Acres embraces a sustainable and symbiotic farming system where our poultry and crop production
-              complement each other.
-            </p>
-          </div>
+<section className="bg-white py-16 px-6 md:px-16 border-t border-gray-200">
+  <div className="max-w-6xl mx-auto space-y-12">
+    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
+      Our Core Philosophy
+    </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                <span className="text-2xl">🚜</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Agro Dealing</h3>
-              <p className="text-gray-600">
-                We supply quality agricultural inputs seeds, fertilizers, crop protection, and tools to support sustainable and productive farming for small to medium-scale farmers.
-              </p>
-            </div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition">
+        <h3 className="text-xl font-semibold text-gray-800 mb-4">Fair Play Environment</h3>
+        <p className="text-gray-600 leading-relaxed">
+        With evolve Marketing the goalthe is to create a Fair playenvironment for emergingbusinesses to consideradvertising as well as publicrelations. With these twodisciplines in check EvolveMarketing for advanced IMCbuilds towards a certain level ofstatus by being capable ofreaching out to the multipleaudience.
+        </p>
+      </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                <span className="text-2xl">🐔</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Poultry Farming</h3>
-              <p className="text-gray-600">
-                We focus primarily on chicken farming, ensuring high-quality, nutritious poultry products for local
-                markets. Our approach emphasizes proper animal husbandry, biosecurity and ethical farming practices.
-              </p>
-            </div>
+      <div className="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition">
+        <h3 className="text-xl font-semibold text-gray-800 mb-4">Disciplined Communication</h3>
+        <p className="text-gray-600 leading-relaxed">
+          A busy universe, Evolve seeks to keep & be productive at all times. The world rather the industry of marketing is growing by day with rise digital along social networking packages 
+        </p>
+      </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                <span className="text-2xl">🌽</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Crop Production</h3>
-              <p className="text-gray-600">
-                We cultivate a variety of staple and high value crops including Bananas, Plantains, Sugarcane, legumes (cowpeas), maize and cassava and
-                other seasonal produce like tomato and garlic. We use sustainable farming techniques to maximize yield
-                while preserving soil health.
-              </p>
-            </div>
+      <div className="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition">
+        <h3 className="text-xl font-semibold text-gray-800 mb-4">Audience Reach & Status</h3>
+        <p className="text-gray-600 leading-relaxed">
+        Our agency will focus on the two waystreet that suffices effectivecommunications by making sure therecipient gets the message and circlesback feedback to the sender.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                <span className="text-2xl">🌱</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Organic Fertilizer Production</h3>
-              <p className="text-gray-600">
-                As part of our commitment to environmental conservation, we produce organic fertilizer to enhance soil
-                fertility and reduce reliance on chemical fertilizers, promoting eco-friendly and cost-effective manure.
-              </p>
-            </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                <span className="text-2xl">🐄</span> {/* Or use 🐐 depending on your livestock */}
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Livestock Farming</h3>
-              <p className="text-gray-600">
-                We raise goats, cattle, and other livestock using sustainable and integrated farming practices. Our animals contribute 
-                to food production and organic manure, supporting soil health and community livelihoods.
-              </p>
-            </div>
-          </div>
+<section className="bg-white py-20 px-6 md:px-16 border-t border-gray-200 max-w-4xl mx-auto">
+  <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Evolve Marketing Hierarchy</h2>
 
-          <div className="mt-12 bg-white p-8 rounded-lg shadow-sm">
-            <p className="text-gray-600">
-              The nutrient-rich manure from our chickens is carefully processed into organic fertilizer, which enriches
-              the soil and enhances crop yields. In return, the crops provide a natural and sustainable source of feed
-              for the poultry, creating a balanced ecosystem that minimizes waste and promote environmental
-              sustainability. This integrated approach not only improves productivity but also supports long-term soil
-              health, reducing the need for synthetic fertilizers while ensuring high quality produce.
-            </p>
-          </div>
-        </div>
-      </section>
+  <ul className="relative border-l-2 border-gray-300 pl-6">
+    {/* Root */}
+    <li className="mb-6">
+      <div className="inline-block bg-black text-white px-4 py-2 rounded-md font-semibold relative -left-4">
+        Evolve Marketing
+      </div>
 
-      {/* Vision, Mission, Commitment */}
-      <section className="py-16">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold tracking-tighter text-green-800">Our Vision</h3>
-              <p className="text-gray-600">
-                To become a leading agricultural enterprise in Malawi, driving sustainable farming practices and
-                contributing to national food security and economic growth.
-              </p>
-            </div>
+      {/* Level 1 */}
+      <ul className="mt-6 border-l-2 border-gray-300 pl-6">
+        {/* Advertising */}
+        <li className="mb-4 relative">
+          <div className="font-semibold text-gray-900">Advertising</div>
 
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold tracking-tighter text-green-800">Our Mission</h3>
-              <p className="text-gray-600">
-                To provide high-quality agricultural products through sustainable farming, advanced techniques, and
-                community engagement, ensuring growth for both our business and the local farming sector.
-              </p>
-            </div>
+          {/* Level 2 */}
+          <ul className="mt-2 border-l-2 border-gray-300 pl-6">
+            <li className="mb-2 text-gray-700">Jingles Commercials</li>
+            <li className="mb-2 relative">
+              <div className="font-semibold text-gray-900">Graphic Designing</div>
 
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold tracking-tighter text-green-800">Our Commitment</h3>
-              <p className="text-gray-600">
-                We believe in sustainable agriculture that not only feeds communities but also nurtures the environment.
-                Through innovative farming methods, responsible resource management, and continuous improvement, we
-                strive to contribute to Malawi's growth and food security.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+              {/* Level 3 */}
+              <ul className="mt-2 border-l-2 border-gray-300 pl-6 text-gray-700">
+                <li>Corporate Branding</li>
+                <li>Personal Branding</li>
+                <li>Vehicle Branding</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
 
-      {/* Business Goals */}
-      <section className="py-16 bg-green-800 text-white">
-        <div className="container">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter">Our Business Goals</h2>
-            <p className="mx-auto max-w-[700px] text-gray-200">
-              DMT Acres is committed to growth, innovation, and sustainability in all our operations.
-            </p>
-          </div>
+        {/* Public Relations */}
+        <li className="mb-4 relative">
+          <div className="font-semibold text-gray-900">Public Relations</div>
+          <ul className="mt-2 border-l-2 border-gray-300 pl-6 text-gray-700">
+            <li>Proofreading</li>
+          </ul>
+        </li>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex gap-4">
-              <CheckCircle2 className="h-6 w-6 text-green-400 shrink-0" />
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Increase Production Capacity</h3>
-                <p className="text-gray-300">
-                  Expand farming operations and improve crop yields through efficient farming techniques.
-                </p>
-              </div>
-            </div>
+        {/* Copywriting */}
+        <li className="mb-4 text-gray-900 font-semibold">Copywriting</li>
+      </ul>
+    </li>
+  </ul>
+</section>
 
-            <div className="flex gap-4">
-              <CheckCircle2 className="h-6 w-6 text-green-400 shrink-0" />
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Strengthen Distribution Channels</h3>
-                <p className="text-gray-300">
-                  Build reliable partnerships with local markets, retailers and bulk buyers to expand product reach.
-                </p>
-              </div>
-            </div>
 
-            <div className="flex gap-4">
-              <CheckCircle2 className="h-6 w-6 text-green-400 shrink-0" />
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Achieve Financial Sustainability</h3>
-                <p className="text-gray-300">
-                  Optimize cost management, improve operational efficiency, and secure funding or grants for business
-                  growth.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <CheckCircle2 className="h-6 w-6 text-green-400 shrink-0" />
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Implement Advanced Techniques</h3>
-                <p className="text-gray-300">
-                  Adopt precision farming, irrigation systems, and improved poultry housing for increased efficiency.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <CheckCircle2 className="h-6 w-6 text-green-400 shrink-0" />
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Diversify Product Offerings</h3>
-                <p className="text-gray-300">
-                  Introduce additional poultry breeds, new crop varieties, and value-added products such as packaged
-                  organic fertilizers.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-green-50">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="space-y-4 mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter">Our Team Structure</h2>
-            <p className="mx-auto max-w-[700px] text-gray-600">
-              DMT Acres is led by a dedicated team of professionals committed to excellence in agriculture.
-            </p>
-          </div>
-          {/* Third Level */}
-          <h2 className="text-xl font-semibold mb-2">Executive</h2><br />
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            <TeamCard 
-              name="Daniel Tsonga" 
-              role="Managing Director"
-              grade="BSc in Land Management"
-              major="(Land Surveying)"
-              imageSrc="/team/DanielTsonga.jpg" 
-              />
-            <TeamCard 
-              name="Mwayi Tsonga" 
-              role="Deputy Director"
-              grade="Masters of Business Administration"
-              major="(Strategic Marketing)"
-              imageSrc="/team/MwayiTsonga.jpg"
-              />
-          </div>
-          <br /><br />
-          <h4 className="text-xl font-semibold mb-2">Finance and Administration</h4><br />
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            <TeamCard name="Sylvester Maluku" role="Administrator" grade="Bachelors of Laws (Hons) (pending)"  major={""} imageSrc="/team/sylvester-maluku.jpg" />
-            <TeamCard name="Tears Bisani" role="Human Resource Manager" grade="Diploma in Human Resource Management"  major={""} imageSrc="/team/tears-bisani.jpg" />
-            <TeamCard name="Angela Chinyama" role="Accountant" grade="Bcom in Financial Sciences"  major="(Financial Management, Accounting, Internal Auditing)" imageSrc="/team/angela-chinyama.jpg" />
-            <TeamCard name="Edward Mbesa" role="Operations Manager" grade={"Bachelor of Social Sciences (Development Studies)"}  major={"Masters of Arts in Political Science (pending)"} imageSrc="/team/edward-mbesa.jpg" />
-            <TeamCard name="Peace Msoza" role="Transport and Logistics Manager" grade="Bachelors of Science in Land Economy"  major="(Property Management and Marketing)" imageSrc="/team/peace-msoza.jpg" />
-            </div>
-          <br /><br />
-          <h4 className="text-xl font-semibold mb-2">Production and Processing Department</h4><br />
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            <TeamCard name="Francisco Jonas" role="Quality Assurance Manager" grade="Bachelors of Science in Nutrition and Food Science"  major="(Human Nutrition)" imageSrc="/team/francisco-jonas.jpg" />
-            <TeamCard name="Rabson Mvula" role="Productions Manager" grade="Diploma in Community Development"  major="Certificate in Legal Studies" imageSrc="/team/rabson-mvula.jpg" />
-          </div>
-          <br /><br />
-          <h4 className="text-xl font-semibold mb-2">Environmental Department</h4><br />
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            <TeamCard name="Omega Tsonga" role="Safety and Environmental Manager" grade="Bachelors of Science in Environmental Sciences"  major="Masters in Tourism and Hotel Management (pending)" imageSrc="/team/omega-tsonga.jpg" />
-          </div>
-          <br /><br />
-          <h4 className="text-xl font-semibold mb-2">Marketing Department</h4><br />
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            <TeamCard name="Carol Chingwalu" role="Marketing Manager" grade="Bachelors of Business Administration"  major="(Marketing)" imageSrc="/team/carol-chingwalu.jpg" />
-            <TeamCard name="Pauline Makhalira" role="Trade Execution Manager" grade="Bachelors of Science in International Economics and Trade"  major="Bachelors of Science in Computing and Information Systems" imageSrc="/team/pauline-makhalira.jpg" />
-          </div>
-          <br /><br />
-          <h4 className="text-xl font-semibold mb-2">Research and Consultancy Unit</h4><br />
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            <TeamCard name="Dr. Wisdom Malata" role="Research Consultant" grade={"PhD. Social Anthropology"}  major={"MA. Cultural Studies"} imageSrc="/team/dr-wisdom-malata.jpg" />
-            <TeamCard name="Joseph Kaphesi" role="Scientific Analyst" grade="Bachelor of Science in Natural Resources Management" major="Bachelor of Arts in Organizational Leadership and Public Relations Masters in Communication Studies (pending)" imageSrc="/team/joseph-kapesi.jpg" />
-          </div>
-          <br /><br />
-          <h4 className="text-xl font-semibold mb-2">Extension and Industrial Control System Department</h4><br />
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-8">
-            <TeamCard name="Freddie Oliver Kokha" role="Agriculture Manager - Crops" grade="Diploma in Agriculture and Natural Resources Management" major="Bachelors of Development Economics (pending)" imageSrc="/team/fred-oliver-kokha.jpg" />
-            <TeamCard name="Martha Kamchepera" role="Veterinary Manager" grade="Diploma in Animal Health and Production" major={""} imageSrc="/team/martha-kamchepera.jpg" />
-            <TeamCard name="Chikondi Lifa" role="Agro-Spatial Analyst" grade="BSc in Land Management"  major={"(Land Surveying)"} imageSrc="/team/chikondi-lifa.jpg" />
-            <TeamCard name="Louis Makhiringa" role="Irrigation Engineer" grade={"Bachelor of Science in Irrigation Engineering"}  major={""} imageSrc="/team/louis-makhiringa.jpg" />
-            <TeamCard name="Chipiliro Chingwembere" role="Farm Manager" grade={"Malawi School Certficate of Education"}  major={""} imageSrc="/team/chipiliro-chigwembere.jpg" />
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
