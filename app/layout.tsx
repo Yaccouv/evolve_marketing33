@@ -4,9 +4,9 @@ import ClientLayout from "@/components/client-layout"
 import { SiteFooter } from "@/components/site-footer" // Import the SiteFooter component
 
 export const metadata: Metadata = {
-  title: "DMT Acres - Sustainable Farming in Malawi",
+  title: "Evolve Marketing",
   description:
-    "DMT Acres is a registered and dynamic farming enterprise based in Ntcheu District, Malawi, specializing in poultry farming, crop production, and organic manure manufacturing.",
+    "Our Operations Aims for Advanced Integrated Marketing Communications.",
 }
 
 export default function RootLayout({
