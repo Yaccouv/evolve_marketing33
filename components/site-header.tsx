@@ -35,81 +35,86 @@ export function SiteHeader() {
   }, [open])
 
   const links = [
-    { path: "/", label: "Home" },
-    { path: "/about", label: "About Us" },
-    { path: "/products", label: "Products & Services" },
-    { path: "/gallery", label: "Gallery" },
-    { path: "/contact", label: "Contact" },
+    { path: "", label: "Home" },
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white">
-      <div className="container flex h-16 items-center justify-between">
-        <button
-          onClick={() => handleNavigation("/")}
-          className="flex items-center gap-2"
-        >
-          {/* <div className="relative h-10 w-10 overflow-hidden rounded-full"> */}
-          <div className="relative h-12 w-24 overflow-hidden">
-            <Image src="/logo/dmt_acres_logo_white_background.png" alt="DMT Acres Logo" fill className="object-cover" />
-          </div>
-          {/* <span className="text-xl font-bold text-green-800">DMT Acres</span> */}
-        </button>
+    <header className="absolute top-0 left-0 right-0 z-50 w-full bg-transparent">
+    <div className="max-w-7xl mx-auto flex h-16 items-center justify-between px-4">
+
+      {/* Logo */}
+      <button
+        onClick={() => handleNavigation("/")}
+        className="flex items-center gap-2"
+      >
+        <div className="relative h-12 w-24 overflow-hidden">
+          <Image
+            src="/images/marketing/logo2.png"
+            alt="DMT Acres Logo"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </button>
+  
+      {/* Right-aligned nav and buttons */}
+      <div className="flex items-center gap-4">
 
         <nav className="hidden md:flex items-center gap-6">
           {links.map(({ path, label }) => (
             <button
               key={path}
               onClick={() => handleNavigation(path)}
-              className={`text-sm font-medium hover:text-green-700 ${
-                pathname === path ? "text-green-800 font-semibold" : ""
+              className={`text-sm font-medium text-white hover:text-green-200 ${
+                pathname === path ? "font-semibold underline" : ""
               }`}
             >
               {label}
             </button>
           ))}
         </nav>
-
-        <div className="flex items-center gap-4">
-          <Button
-            onClick={() => handleNavigation("/contact")}
-            className="hidden md:flex bg-green-700 hover:bg-green-800"
-          >
-            Get In Touch
-          </Button>
-
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="md:hidden">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-
-            <SheetContent side="right">
-              <nav className="flex flex-col gap-4 mt-8">
-                {links.map(({ path, label }) => (
-                  <button
-                    key={path}
-                    onClick={() => handleNavigation(path)}
-                    className={`text-lg font-medium text-left hover:text-green-700 ${
-                      pathname === path ? "text-green-800 font-semibold" : ""
-                    }`}
-                  >
-                    {label}
-                  </button>
-                ))}
-                <Button
-                  onClick={() => handleNavigation("/contact")}
-                  className="mt-4 bg-green-700 hover:bg-green-800"
+  
+        <Button
+          onClick={() => handleNavigation("#")}
+          className="hover:opacity-90" style={{ backgroundColor: "#06402b" }}
+        >
+          Get In Touch
+        </Button>
+  
+        {/* Mobile menu */}
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
+            <Button variant="outline" size="icon" className="md:hidden">
+              <Menu className="h-5 w-5" />
+              <span className="sr-only">Toggle menu</span>
+            </Button>
+          </SheetTrigger>
+  
+          <SheetContent side="right">
+            <nav className="flex flex-col gap-4 mt-8">
+              {links.map(({ path, label }) => (
+                <button
+                  key={path}
+                  onClick={() => handleNavigation(path)}
+                  className={`text-lg font-medium text-left hover:text-green-700 ${
+                    pathname === path ? "text-green-800 font-semibold" : ""
+                  }`}
                 >
-                  Get In Touch
-                </Button>
-              </nav>
-            </SheetContent>
-          </Sheet>
-        </div>
+                  {label}
+                </button>
+              ))}
+              <Button
+                onClick={() => handleNavigation("/contact")}
+                className="mt-4 bg-green-700 hover:bg-green-800" 
+              >
+                Get In Touch
+              </Button>
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
-    </header>
+    </div>
+  </header>
+  
   )
 }
