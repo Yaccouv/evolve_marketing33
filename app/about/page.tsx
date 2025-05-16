@@ -56,7 +56,7 @@ export default function AboutPage() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/images/banner.jpeg"
+          src="/images/marketing/banner.jpeg"
           alt="Hero background"
           fill
           className="object-cover"
@@ -83,7 +83,7 @@ export default function AboutPage() {
     <div className="w-full md:w-1/2 flex justify-center md:justify-start">
       <div className="w-72 h-72 rounded-full overflow-hidden shadow-md">
         <Image
-          src="/images/music.jpeg"
+          src="/images/marketing/music.jpeg"
           alt="Evolve Marketing"
           width={400}
           height={400}
@@ -98,13 +98,7 @@ export default function AboutPage() {
         Evolve Marketing & Communications
       </h2>
       <p className="text-gray-600 text-lg leading-relaxed">
-        Our programs aim at a strategic Malawi that is ready to evolve in the marketing space. Evolve Marketing embraces the future — it's already within our reach. 
-      </p>
-      <p className="text-gray-600 text-lg leading-relaxed">
-        We exist to help businesses grow and thrive by crafting meaningful marketing strategies that build connection, influence decisions, and drive lasting success.
-      </p>
-      <p className="text-gray-600 text-lg leading-relaxed">
-        Marketing is more than promotion — it’s giving people a reason to choose your products and services with confidence.
+      Our programs aims at a strategic Malawi that is yet to evolve inthe marketing area of business. Evolve Marketing embraces thefuture as it already is at our disposal. Overall, the role of amarketing consultancy is to help businesses grow and succeedby developing and implementing effective marketing strategiesthat connect them with their target audience and drive salesand revenue growth. <br /><br />  Marketing is giving people information and showing them the reason to choose your products and services 
       </p>
     </div>
 
@@ -150,7 +144,7 @@ export default function AboutPage() {
       <div className="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition">
         <h3 className="text-xl font-semibold text-gray-800 mb-4">Fair Play Environment</h3>
         <p className="text-gray-600 leading-relaxed">
-        With evolve Marketing the goalthe is to create a Fair playenvironment for emergingbusinesses to consideradvertising as well as publicrelations. With these twodisciplines in check EvolveMarketing for advanced IMCbuilds towards a certain level ofstatus by being capable ofreaching out to the multipleaudience.
+        With evolve Marketing the goalthe is to create a Fair play environment for emerging businesses to consider advertising as well as public relations. With these two disciplines in check Evolve Marketing for advanced IMC builds towards a certain level of status by being capable of reaching out to the multiple audience.
         </p>
       </div>
 
@@ -164,7 +158,7 @@ export default function AboutPage() {
       <div className="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition">
         <h3 className="text-xl font-semibold text-gray-800 mb-4">Audience Reach & Status</h3>
         <p className="text-gray-600 leading-relaxed">
-        Our agency will focus on the two waystreet that suffices effectivecommunications by making sure therecipient gets the message and circlesback feedback to the sender.
+        Our agency will focus on the two way street that suffices effective communications by making sure the recipient gets the message and circles back feedback to the sender.
         </p>
       </div>
     </div>
@@ -172,52 +166,54 @@ export default function AboutPage() {
 </section>
 
 
-<section className="bg-white py-20 px-6 md:px-16 border-t border-gray-200 max-w-4xl mx-auto">
-  <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Evolve Marketing Hierarchy</h2>
 
-  <ul className="relative border-l-2 border-gray-300 pl-6">
-    {/* Root */}
-    <li className="mb-6">
-      <div className="inline-block bg-black text-white px-4 py-2 rounded-md font-semibold relative -left-4">
-        Evolve Marketing
+
+<section className="bg-gray-50 py-20 px-6 sm:px-10 lg:px-24">
+  <div className="max-w-6xl mx-auto space-y-16">
+    
+    {/* Section Title */}
+    <div className="text-center">
+      <h2 className="text-4xl font-bold text-gray-900 mb-4">Future Plans & Milestones</h2>
+      <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+        Transforming Markets & becoming a business leader.<br />
+        As a firm we hope to be able operate on even a larger scale, as the day goes, all the data we have gathered will transform into useful experience if applied wisely.<br />
+        Righ about now in cases of designing we've only been drawn to graphics but we look forward to acquiring more 21st century skills that are a perfect fit for this generation.
+      </p>
+    </div>
+
+    {/* Timeline */}
+    <div className="relative border-l-4 border-black pl-6 space-y-10">
+      {/* Milestone 1 */}
+      <div className="relative">
+        <div className="absolute left-[-1.1rem] top-1 w-5 h-5 bg-black rounded-full border-4 border-white"></div>
+        <h4 className="text-xl font-semibold text-gray-900">Gain recognition over renowned organizations under the plc entity</h4>
+        <span className="block text-sm text-gray-600 mt-1">2030</span>
       </div>
 
-      {/* Level 1 */}
-      <ul className="mt-6 border-l-2 border-gray-300 pl-6">
-        {/* Advertising */}
-        <li className="mb-4 relative">
-          <div className="font-semibold text-gray-900">Advertising</div>
+      {/* Milestone 2 */}
+      <div className="relative">
+        <div className="absolute left-[-1.1rem] top-1 w-5 h-5 bg-black rounded-full border-4 border-white"></div>
+        <h4 className="text-xl font-semibold text-gray-900">Simply global brand.</h4>
+        <span className="block text-sm text-gray-600 mt-1">2040</span>
+      </div>
 
-          {/* Level 2 */}
-          <ul className="mt-2 border-l-2 border-gray-300 pl-6">
-            <li className="mb-2 text-gray-700">Jingles Commercials</li>
-            <li className="mb-2 relative">
-              <div className="font-semibold text-gray-900">Graphic Designing</div>
+      {/* Milestone 3 */}
+      <div className="relative">
+        <div className="absolute left-[-1.1rem] top-1 w-5 h-5 bg-black rounded-full border-4 border-white"></div>
+        <h4 className="text-xl font-semibold text-gray-900">Implement everything the organization has claimed of.</h4>
+        <span className="block text-sm text-gray-600 mt-1">2026</span>
+      </div>
 
-              {/* Level 3 */}
-              <ul className="mt-2 border-l-2 border-gray-300 pl-6 text-gray-700">
-                <li>Corporate Branding</li>
-                <li>Personal Branding</li>
-                <li>Vehicle Branding</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-
-        {/* Public Relations */}
-        <li className="mb-4 relative">
-          <div className="font-semibold text-gray-900">Public Relations</div>
-          <ul className="mt-2 border-l-2 border-gray-300 pl-6 text-gray-700">
-            <li>Proofreading</li>
-          </ul>
-        </li>
-
-        {/* Copywriting */}
-        <li className="mb-4 text-gray-900 font-semibold">Copywriting</li>
-      </ul>
-    </li>
-  </ul>
+      {/* Milestone 4 */}
+      <div className="relative">
+        <div className="absolute left-[-1.1rem] top-1 w-5 h-5 bg-black rounded-full border-4 border-white"></div>
+        <h4 className="text-xl font-semibold text-gray-900">Try to expand internationally, Franchises, mergers and acquisitions</h4>
+        <span className="block text-sm text-gray-600 mt-1">2035</span>
+      </div>
+    </div>
+  </div>
 </section>
+
 
 
     </div>
