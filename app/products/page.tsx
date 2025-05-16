@@ -1,462 +1,193 @@
 import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight, CheckCircle } from "lucide-react"
+import { CheckCircle2 } from "lucide-react"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+const TeamCard1 = ({ name, role, grade, school, major, imageSrc }: { name: string; role: string; grade: string; school: string; major: string; imageSrc: string }) => (
+  <div className="text-center max-w-sm mx-auto bg-white rounded-xl shadow-md overflow-hidden text-center p-6 space-y-3">
+    <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4 border-4 border-green-700">
+      <Image
+        src={imageSrc}
+        alt={name}
+        fill
+        className="object-cover"
+      />
+    </div>
+    
+    <div className="w-72 mx-auto"> {/* Fixed width and centered */}
+      <h3 className="text-xl font-semibold">{name}</h3>
+      <p className="text-green-700">{role}</p>
+      {grade && grade !== "null" && <p className="text-green-700">{grade}</p>}
+      {major && major !== "null" && <p className="text-green-700">{major}</p>}
+      {school && school !== "null" && <p className="text-green-700">{school}</p>}
+    </div>
+  </div>
+)
+const TeamCard = ({ name, role, grade, major, imageSrc }: { name: string; role: string; grade: string; major: string; imageSrc: string }) => (
 
-export default function ProductsPage() {
+<Card className="bg-white border-green-200">
+<CardHeader className="pb-2">
+  <CardTitle className="flex items-center gap-2">
+    <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4 border-green-700">
+      <Image
+        src={imageSrc}
+        alt={name}
+        fill
+        className="object-cover"
+      />
+    </div>
+  </CardTitle>
+</CardHeader>
+<CardContent>
+  <div className="w-72 mx-auto"> {/* Fixed width and centered */}
+    <h3 className="text-xl font-semibold">{name}</h3>
+    <p className="text-green-700">{role}</p>
+    {grade && grade !== "null" && <p className="text-green-700">{grade}</p>}
+    {major && major !== "null" && <p className="text-green-700">{major}</p>}
+  </div>
+</CardContent>
+</Card>
+)
+
+
+export default function AboutPage() {
   return (
-    <div className="flex min-h-screen flex-col">
-      {/* Hero Section */}
-      <section className="relative">
-        <div className="absolute inset-0 bg-black/60 z-10" />
-        <div className="relative h-[400px] w-full">
-          <Image src="/images/maize3.jpg?height=400&width=1200" alt="DMT Acres Products" fill className="object-cover" />
-        </div>
-        <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">Products & Services</h1>
-          <p className="mx-auto max-w-[700px] mt-4 text-lg text-gray-200">
-            Discover our range of high-quality agricultural products and services
-          </p>
-        </div>
-      </section>
+    <div className="flex min-h-[500px] flex-col">
+    <section className="relative h-[500px] w-full">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/game.jpeg"
+          alt="Hero background"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
+  
+      {/* Text Content */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Evolve Marketing</h1>
+        <p className="max-w-xl text-lg text-gray-200 mb-6">
+          We craft modern marketing communications that drive results and build lasting brand value.
+        </p>
+       
+      </div>
+    </section>
 
-      {/* Poultry Section */}
-      <section id="poultry" className="py-16">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold tracking-tighter text-green-800">Poultry Farming</h2>
-              <p className="text-gray-600">
-                Our poultry farming operation focuses primarily on chicken farming, ensuring high-quality, nutritious
-                poultry products for local markets. Our approach emphasizes proper animal husbandry, biosecurity and
-                ethical farming practices.
-              </p>
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold">Our Poultry Products:</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Live Chickens:</span> Healthy and well-raised poultry for sale which
-                      includes Kroilers and local breeds.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Dressed Chicken:</span> Fresh and hygienically processed chicken
-                      meat.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Day-old to Months Chicks:</span> Quality chicks for rearing.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Egg Production:</span> Fresh farm eggs for consumption and
-                      businesses.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <Button asChild className="gap-2 bg-green-700 hover:bg-green-800">
-                <Link href="/contact">
-                  Inquire About Our Poultry Products
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-            <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-              <Image
-                src="/images/chicken3.jpg?height=400&width=600"
-                alt="DMT Acres Poultry"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+  
+    <section className="bg-white py-20 px-6 md:px-16">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Subscription and Competitive Advantage</h2>
 
-      {/* Crops Section */}
-      <section id="crops" className="py-16 bg-green-50">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 relative h-[400px] w-full rounded-lg overflow-hidden">
-              <Image src="/images/maize3.jpg?height=400&width=600" alt="DMT Acres Crops" fill className="object-cover" />
-            </div>
-            <div className="order-1 md:order-2 space-y-6">
-              <h2 className="text-3xl font-bold tracking-tighter text-green-800">Crop Production</h2>
-              <p className="text-gray-600">
-                We cultivate a variety of staple and high-value crops using sustainable farming techniques to maximize
-                yield while preserving soil health. Our crops are grown with minimal chemical inputs, focusing on
-                natural and organic methods.
-              </p>
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold">Our Crop Products:</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Maize:</span> High-quality maize grown using sustainable practices.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Cowpeas:</span> Nutritious legumes that also help in nitrogen
-                      fixation.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Cassava:</span> Drought-resistant staple crop with multiple uses.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Seasonal Produce:</span> Tomatoes, garlic, Bananas, Plantains, Sugarcane and other seasonal
-                      vegetables.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <Button asChild className="gap-2 bg-green-700 hover:bg-green-800">
-                <Link href="/contact">
-                  Inquire About Our Crop Products
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+      {/* Card 1 */}
+      <div className="border rounded-xl p-8 shadow-sm hover:shadow-md transition duration-300">
+        <div className="text-sm uppercase font-semibold text-gray-500 mb-2">Package</div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">Advertising</h3>
+        <p className="text-gray-700 mb-4">
+          From jingles, commercials, social media, and infomercials to printing in our weekly and quarterly issues.
+        </p>
+        <p className="text-sm text-gray-600 mb-4 italic">
+          Subscribe to this package and get the brand awareness and loyalty your business deserves.
+        </p>
+        <div className="text-xl font-bold text-black">MWK 100,000</div>
+      </div>
 
-      {/* Organic Manure Section */}
-      <section id="manure" className="py-16">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold tracking-tighter text-green-800">Organic Fertilizer</h2>
-              <p className="text-gray-600">
-                As part of our commitment to environmental conservation, we produce organic fertilizer to enhance soil
-                fertility and reduce reliance on chemical fertilizers. Our organic fertilizer is derived from our poultry
-                operations, creating a sustainable cycle within our farm.
-              </p>
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold">Benefits of Our Organic Fertilizer:</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Nutrient-Rich:</span> Contains essential nutrients for plant growth.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Soil Health:</span> Improves soil structure and microbial activity.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Eco-Friendly:</span> Reduces reliance on chemical fertilizers.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Cost-Effective:</span> Provides a sustainable alternative to
-                      expensive synthetic inputs.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <Button asChild className="gap-2 bg-green-700 hover:bg-green-800">
-                <Link href="/contact">
-                  Inquire About Our Organic Fertilizer
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-            <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-              <Image
-                src="/images/organic6.jpg?height=400&width=600"
-                alt="DMT Acres Organic Fertilizer"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Card 2 */}
+      <div className="border rounded-xl p-8 shadow-sm hover:shadow-md transition duration-300">
+        <div className="text-sm uppercase font-semibold text-gray-500 mb-2">Package</div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">Copywriting & Proofreading</h3>
+        <p className="text-gray-700 mb-4">
+          For profound advertising scripts that evoke the reader to delve into what is being communicated.
+        </p>
+        <p className="text-sm text-gray-600 mb-4 italic">
+          Copywriting ensures efficiency by enhancing connectivity between the business and clients.
+        </p>
+        <div className="text-xl font-bold text-black">MWK 150,000 - MWK 250,000</div>
+      </div>
 
-      {/* Training & Consultancy */}
-      <section id="training" className="py-16 bg-green-50">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 relative h-[400px] w-full rounded-lg overflow-hidden">
-              <Image
-                src="/images/cattle1.jpg?height=400&width=600"
-                alt="DMT Acres Training"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="order-1 md:order-2 space-y-6">
-              <h2 className="text-3xl font-bold tracking-tighter text-green-800">Training & Consultancy</h2>
-              <p className="text-gray-600">
-                We offer training and consultancy services in sustainable farming practices, with a special focus on
-                organic fertilizer production. Our goal is to empower local farmers with knowledge and skills to improve
-                their agricultural practices.
-              </p>
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold">Our Training Services:</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Organic Fertilizer Production:</span> Techniques for creating
-                      high-quality organic fertilizers.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Sustainable Farming:</span> Methods for environmentally friendly
-                      agriculture.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Poultry Management:</span> Best practices for poultry farming.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Integrated Farming:</span> Creating symbiotic relationships between
-                      different farming activities.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <Button asChild className="gap-2 bg-green-700 hover:bg-green-800">
-                <Link href="/contact">
-                  Inquire About Our Training Services
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Card 3 */}
+      <div className="border rounded-xl p-8 shadow-sm hover:shadow-md transition duration-300">
+        <div className="text-sm uppercase font-semibold text-gray-500 mb-2">Package</div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">Graphic Designing</h3>
+        <p className="text-gray-700 mb-4">
+          Flyers, infographics, album cover art, banners, billboards, brochures – mass appeal is one way to put it.
+        </p>
+        <p className="text-sm text-gray-600 mb-4 italic">
+          Great design requires deep insight into color psychology and smart AI tools that provide impactful templates.
+        </p>
+        <div className="text-xl font-bold text-black">MWK 20,000</div>
+      </div>
 
-        {/* Agro Dealing Section */}
-        <section id="agro-dealing" className="py-16">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold tracking-tighter text-green-800">Agro Dealing</h2>
-              <p className="text-gray-600">
-                We supply reliable, high-quality agricultural inputs to support farmers at every stage of the production cycle. Our goal is to empower sustainable and efficient farming through trusted products and expert advice.
-              </p>
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold">Our Agro Products & Services:</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Seeds:</span> Certified, high-yield varieties for different crops
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Fertilizers:</span> Organic and inorganic options for soil nutrition.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Crop Protection:</span> Safe pesticides and herbicides for pest and disease control.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Farming Tools:</span> Essential equipment for small to medium-scale farmers.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Advisory Support:</span> Guidance on input use, soil care, and sustainable practices
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <Button asChild className="gap-2 bg-green-700 hover:bg-green-800">
-                <Link href="/contact">
-                  Inquire About Our Agro Inputs
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-            <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-              <Image
-                src="/images/banana1.jpg?height=400&width=600"
-                alt="DMT Acres Agro Dealing"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Card 4 */}
+      <div className="border rounded-xl p-8 shadow-sm hover:shadow-md transition duration-300">
+        <div className="text-sm uppercase font-semibold text-gray-500 mb-2">Package</div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">Public Relations</h3>
+        <p className="text-gray-700 mb-4">
+          PR calls for public support to build understanding, gain neutrality, or respond to inquiries effectively.
+        </p>
+        <p className="text-sm text-gray-600 mb-4 italic">
+          A well-executed public relations strategy is an ongoing process that builds strong, lasting relationships.
+        </p>
+        <div className="text-xl font-bold text-black">MWK 200,000</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* Livestock Farming */}
-      <section id="livestock" className="py-16 bg-green-50">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 relative h-[400px] w-full rounded-lg overflow-hidden">
-              <Image
-                src="/images/cattle.jpg?height=400&width=600"
-                alt="Livestock Farming at DMT Acres"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="order-1 md:order-2 space-y-6">
-              <h2 className="text-3xl font-bold tracking-tighter text-green-800">Livestock Farming</h2>
-              <p className="text-gray-600">
-                At DMT Acres, we practice integrated livestock farming with a focus on sustainability and resilience.
-                Our approach combines traditional and modern practices to rear healthy animals while enhancing
-                soil fertility through manure recycling.
-              </p>
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold">Our Livestock Farming Focus:</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Goats & Cattle:</span> Rearing of hardy local and improved breeds for meat and manure production.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Sustainable Feeding:</span> Use of locally available feed and fodder crops to reduce cost.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Zero & Open Grazing:</span> Livestock are managed through controlled and free-range systems.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Soil Fertility Enhancement:</span> Integration of manure into crop production for regenerative farming.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <Button asChild className="gap-2 bg-green-700 hover:bg-green-800">
-                <Link href="/products#livestock">
-                  Explore Livestock Products
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Target Markets */}
-      <section className="py-16">
-        <div className="container">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter">Our Target Markets</h2>
-            <p className="mx-auto max-w-[700px] text-gray-600">
-              DMT Acres serves a diverse range of customers across various sectors.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            <Card className="text-center">
-              <CardHeader className="pb-2">
-                <CardTitle>Local Markets</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="h-20 w-20 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
-                  <span className="text-3xl">🏪</span>
-                </div>
-                <CardDescription>Providing fresh produce to local markets and supermarkets</CardDescription>
-              </CardContent>
-            </Card>
 
-            <Card className="text-center">
-              <CardHeader className="pb-2">
-                <CardTitle>Agro-Processing</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="h-20 w-20 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
-                  <span className="text-3xl">🏭</span>
-                </div>
-                <CardDescription>Supplying raw materials to agro-processing industries</CardDescription>
-              </CardContent>
-            </Card>
 
-            <Card className="text-center">
-              <CardHeader className="pb-2">
-                <CardTitle>Hospitality</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="h-20 w-20 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
-                  <span className="text-3xl">🍽️</span>
-                </div>
-                <CardDescription>Serving hotels and restaurants with quality produce</CardDescription>
-              </CardContent>
-            </Card>
+<section className="bg-white py-20 px-6 md:px-16 border-t border-gray-200 max-w-4xl mx-auto">
+  <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Evolve Marketing Hierarchy</h2>
 
-            <Card className="text-center">
-              <CardHeader className="pb-2">
-                <CardTitle>NGOs & Government</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="h-20 w-20 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
-                  <span className="text-3xl">🤝</span>
-                </div>
-                <CardDescription>Supporting food security programs and initiatives</CardDescription>
-              </CardContent>
-            </Card>
+  <ul className="relative border-l-2 border-gray-300 pl-6">
+    {/* Root */}
+    <li className="mb-6">
+      <div className="inline-block bg-black text-white px-4 py-2 rounded-md font-semibold relative -left-4">
+        Evolve Marketing
+      </div>
 
-            <Card className="text-center">
-              <CardHeader className="pb-2">
-                <CardTitle>Individual Consumers</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="h-20 w-20 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
-                  <span className="text-3xl">👨‍👩‍👧‍👦</span>
-                </div>
-                <CardDescription>Providing nutritious food directly to families</CardDescription>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      {/* Level 1 */}
+      <ul className="mt-6 border-l-2 border-gray-300 pl-6">
+        {/* Advertising */}
+        <li className="mb-4 relative">
+          <div className="font-semibold text-gray-900">Advertising</div>
+
+          {/* Level 2 */}
+          <ul className="mt-2 border-l-2 border-gray-300 pl-6">
+            <li className="mb-2 text-gray-700">Jingles Commercials</li>
+            <li className="mb-2 relative">
+              <div className="font-semibold text-gray-900">Graphic Designing</div>
+
+              {/* Level 3 */}
+              <ul className="mt-2 border-l-2 border-gray-300 pl-6 text-gray-700">
+                <li>Corporate Branding</li>
+                <li>Personal Branding</li>
+                <li>Vehicle Branding</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        {/* Public Relations */}
+        <li className="mb-4 relative">
+          <div className="font-semibold text-gray-900">Public Relations</div>
+          <ul className="mt-2 border-l-2 border-gray-300 pl-6 text-gray-700">
+            <li>Proofreading</li>
+          </ul>
+        </li>
+
+        {/* Copywriting */}
+        <li className="mb-4 text-gray-900 font-semibold">Copywriting</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+
     </div>
   )
 }
