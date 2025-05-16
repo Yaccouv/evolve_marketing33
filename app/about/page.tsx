@@ -56,7 +56,7 @@ export default function AboutPage() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/images/marketing/banner.jpeg"
+          src="/images/anime.jpeg"
           alt="Hero background"
           fill
           className="object-cover"
@@ -83,7 +83,7 @@ export default function AboutPage() {
     <div className="w-full md:w-1/2 flex justify-center md:justify-start">
       <div className="w-72 h-72 rounded-full overflow-hidden shadow-md">
         <Image
-          src="/images/marketing/music.jpeg"
+          src="/images/music.jpeg"
           alt="Evolve Marketing"
           width={400}
           height={400}
