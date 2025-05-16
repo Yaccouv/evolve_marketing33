@@ -1,361 +1,312 @@
-"use client"
-
-import { useState } from "react"
 import Image from "next/image"
-import dynamic from "next/dynamic"
+import { CheckCircle2 } from "lucide-react"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
-const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false })
+const TeamCard1 = ({ name, role, grade, school, major, imageSrc }: { name: string; role: string; grade: string; school: string; major: string; imageSrc: string }) => (
+  <div className="text-center max-w-sm mx-auto bg-white rounded-xl shadow-md overflow-hidden text-center p-6 space-y-3">
+    <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4 border-4 border-green-700">
+      <Image
+        src={imageSrc}
+        alt={name}
+        fill
+        className="object-cover"
+      />
+    </div>
+    
+    <div className="w-72 mx-auto"> {/* Fixed width and centered */}
+      <h3 className="text-xl font-semibold">{name}</h3>
+      <p className="text-green-700">{role}</p>
+      {grade && grade !== "null" && <p className="text-green-700">{grade}</p>}
+      {major && major !== "null" && <p className="text-green-700">{major}</p>}
+      {school && school !== "null" && <p className="text-green-700">{school}</p>}
+    </div>
+  </div>
+)
+const TeamCard = ({ name, role, grade, major, imageSrc }: { name: string; role: string; grade: string; major: string; imageSrc: string }) => (
 
-type GalleryItem = {
-  src: string
-  type: "image" | "video"
-  alt: string
-  category: string
-}
+<Card className="bg-white border-green-200">
+<CardHeader className="pb-2">
+  <CardTitle className="flex items-center gap-2">
+    <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden mb-4 border-green-700">
+      <Image
+        src={imageSrc}
+        alt={name}
+        fill
+        className="object-cover"
+      />
+    </div>
+  </CardTitle>
+</CardHeader>
+<CardContent>
+  <div className="w-72 mx-auto"> {/* Fixed width and centered */}
+    <h3 className="text-xl font-semibold">{name}</h3>
+    <p className="text-green-700">{role}</p>
+    {grade && grade !== "null" && <p className="text-green-700">{grade}</p>}
+    {major && major !== "null" && <p className="text-green-700">{major}</p>}
+  </div>
+</CardContent>
+</Card>
+)
 
-export default function GalleryPage() {
-  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null)
 
-  const galleryItems: GalleryItem[] = [
-    // Images
-    { src: "/images/chicken1.jpg?height=300&width=400", type: "image", alt: "Poultry Farm", category: "Poultry" },
-    { src: "/images/chicken2.jpg?height=300&width=400", type: "image", alt: "Poultry Farm", category: "Poultry" },
-    { src: "/images/chicken3.jpg?height=300&width=400", type: "image", alt: "Poultry Farm", category: "Poultry" },
-    { src: "/images/chicken4.jpg?height=300&width=400", type: "image", alt: "Poultry Farm", category: "Poultry" },
-    { src: "/images/chicken5.jpg?height=300&width=400", type: "image", alt: "Poultry Farm", category: "Poultry" },
-    { src: "/images/chicken6.jpg?height=300&width=400", type: "image", alt: "Poultry Farm", category: "Poultry" },
-    { src: "/images/maize.jpg?height=300&width=400", type: "image", alt: "Maize Field", category: "Crops" },
-    { src: "/images/maize3.jpg?height=300&width=400", type: "image", alt: "Maize Field", category: "Crops" },
-    { src: "/images/maize2.jpg?height=300&width=400", type: "image", alt: "Farm Workers", category: "Team" },
-    { src: "/images/banana1.jpg?height=300&width=400", type: "image", alt: "Banana Field", category: "Crops" },
-    { src: "/images/banana2.jpg?height=300&width=400", type: "image", alt: "Banana Field", category: "Crops" },
-    { src: "/images/banana3.jpg?height=300&width=400", type: "image", alt: "Banana Field", category: "Crops" },
-    { src: "/images/banana4.jpg?height=300&width=400", type: "image", alt: "Banana Field", category: "Crops" },
-    { src: "/images/irrigation.jpg?height=300&width=400", type: "image", alt: "Irrigation", category: "Irrigation" },
-    { src: "/images/organic.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-    { src: "/images/organic2.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-    { src: "/images/organic3.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-    { src: "/images/organic4.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-    { src: "/images/organic5.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-    { src: "/images/organic6.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-    { src: "/images/organic7.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-    { src: "/images/cattle.jpg?height=300&width=400", type: "image", alt: "Cattle Farming", category: "Cattle" },
-    { src: "/images/cattle1.jpg?height=300&width=400", type: "image", alt: "Cattle Farming", category: "Cattle" },
-    { src: "/images/cattle3.jpg?height=300&width=400", type: "image", alt: "Cattle Farming", category: "Cattle" },
-
-    // Videos (recorded via smartphone)
-    { src: "/videos/chicken1.mp4", type: "video", alt: "Feeding Chickens", category: "Poultry" },
-    { src: "/videos/chicken2.mp4", type: "video", alt: "Feeding Chickens", category: "Poultry" },
-    { src: "/videos/feeds1.mp4", type: "video", alt: "Feeds", category: "Poultry" },
-    { src: "/videos/feeds2.mp4", type: "video", alt: "Feeds", category: "Poultry" },
-    { src: "/videos/maize-field1.mp4", type: "video", alt: "Maize", category: "Crops" },
-    { src: "/videos/maize-field2.mp4", type: "video", alt: "Maize", category: "Crops" },
-    { src: "/videos/organic1.mp4", type: "video", alt: "Organic Fertilizer", category: "Fertilizer" },
-    { src: "/videos/organic2.mp4", type: "video", alt: "Organic Fertilizer", category: "Fertilizer" },
-    { src: "/videos/banana1.mp4", type: "video", alt: "Banana", category: "Crops" },
-    { src: "/videos/irrigation.mp4", type: "video", alt: "Irrigation Demo", category: "Irrigation" },
-  ]
-
+export default function AboutPage() {
   return (
-    <div className="flex min-h-screen flex-col">
-      {/* Hero Section */}
-       <section className="relative">
-         <div className="absolute inset-0 bg-black/60 z-10" />
-         <div className="relative h-[400px] w-full">
-           <Image src="/images/banner.jpg" alt="DMT Acres Gallery" fill className="object-cover" />
-         </div>
-         <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
-           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">Photo & Video Gallery</h1>
-           <p className="mx-auto max-w-[700px] mt-4 text-lg text-gray-200">
-             A visual showcase of our farming life and operations
-           </p>
-         </div>
-       </section>
+    <div className="flex min-h-[500px] flex-col">
+    <section className="relative h-[500px] w-full">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/game.jpeg"
+          alt="Hero background"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
+  
+      {/* Text Content */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Evolve Marketing</h1>
+        <p className="max-w-xl text-lg text-gray-200 mb-6">
+          We craft modern marketing communications that drive results and build lasting brand value.
+        </p>
+       
+      </div>
+    </section>
 
-      {/* Gallery Section */}
-      <section className="py-16">
-         <div className="container">
-           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-             {galleryItems.map((item, index) => (
-               <div key={index} className="group relative overflow-hidden rounded-lg">
-                 <div className="relative h-64 w-full">
-                   {item.type === "image" ? (
-                     <Image
-                       src={item.src}
-                       alt={item.alt}
-                       fill
-                       className="object-cover transition-transform group-hover:scale-105"
-                     />
-                   ) : (
-                     <ReactPlayer
-                       url={item.src}
-                       controls
-                       muted
-                       playing={false}
-                       width="100%"
-                       height="100%"
-                       style={{ borderRadius: "0.5rem" }}
-                     />
-                   )}
-                 </div>
-                 <div
-                   onClick={() => setSelectedItem(item)}
-                   className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 cursor-pointer"
-                 >
-                   <p className="font-semibold text-lg">{item.alt}</p>
-                   <span className="text-sm bg-green-700 px-2 py-1 rounded-full mt-2">{item.category}</span>
-                 </div>
-               </div>
-             ))}
-           </div>
-         </div>
-      </section>
+  
+    <section className="bg-white py-20 px-6 md:px-16">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-3xl font-bold text-center mb-4 text-gray-900">Evolve Marketing</h2>
+    <p className="text-center text-lg text-gray-600 mb-12">
+      For Advanced Integrated Marketing Communications
+    </p>
 
-      {/* Modal */}
-      {selectedItem && (
-        <div
-          className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center p-4"
-          onClick={() => setSelectedItem(null)}
-        >
-          <div
-            className="bg-white max-w-4xl w-full rounded-lg overflow-hidden relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setSelectedItem(null)}
-              className="absolute top-2 right-2 z-10 text-white bg-black/50 rounded-full p-2 hover:bg-black"
-            >
-              ✕
-            </button>
-            <div className="aspect-video w-full">
-              {selectedItem.type === "image" ? (
-                <Image
-                  src={selectedItem.src}
-                  alt={selectedItem.alt}
-                  fill
-                  className="object-contain"
-                />
-              ) : (
-                <ReactPlayer
-                  url={selectedItem.src}
-                  playing
-                  controls
-                  muted
-                  width="100%"
-                  height="100%"
-                />
-              )}
-            </div>
-            <div className="p-4 text-center">
-              <h2 className="text-lg font-semibold">{selectedItem.alt}</h2>
-              <p className="text-sm text-gray-500">{selectedItem.category}</p>
-            </div>
+    <div className="overflow-x-auto">
+      <table className="min-w-full border border-gray-300 text-left text-sm text-gray-800">
+        <thead className="bg-gray-100 text-gray-900">
+          <tr>
+            <th className="py-4 px-6 font-semibold border-b">Strengths</th>
+            <th className="py-4 px-6 font-semibold border-b">Weaknesses</th>
+            <th className="py-4 px-6 font-semibold border-b">Opportunities</th>
+            <th className="py-4 px-6 font-semibold border-b">Threats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="hover:bg-gray-50 transition">
+            <td className="py-4 px-6 border-b">Up-to-date business information</td>
+            <td className="py-4 px-6 border-b">All businesses depend on the overall economic growth projected by GDP</td>
+            <td className="py-4 px-6 border-b">Growing number of people seeking to be civic educated about tech and marketing</td>
+            <td className="py-4 px-6 border-b">Increasing number of competitors</td>
+          </tr>
+          <tr className="hover:bg-gray-50 transition">
+            <td className="py-4 px-6 border-b">Attractive and trendy designs</td>
+            <td className="py-4 px-6 border-b"></td>
+            <td className="py-4 px-6 border-b">High demand for outstanding marketing communications</td>
+            <td className="py-4 px-6 border-b">Supply chain disruptions</td>
+          </tr>
+          <tr className="hover:bg-gray-50 transition">
+            <td className="py-4 px-6 border-b">Quality time invested in research and development</td>
+            <td className="py-4 px-6 border-b"></td>
+            <td className="py-4 px-6 border-b"></td>
+            <td className="py-4 px-6 border-b">Negative reviews</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div className="mt-12 text-center max-w-3xl mx-auto text-gray-700">
+      <p className="italic text-base">
+        <strong>Note:</strong> For our competitors, we can only hope for a strategic alliance so we both could satisfy the customer's needs.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<section className="bg-white py-20 px-6 md:px-16">
+  <div className="max-w-7xl mx-auto">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      
+      {/* Text & Market Segmentation */}
+      <div className="space-y-6">
+        <h2 className="text-3xl font-bold text-gray-900">Market Segmentation & Positioning</h2>
+        <p className="text-gray-700 leading-relaxed">
+        In addition, to this section we take a look at the people we sell products and offer services to. Market analysis is a detailed assessment of your business’s target market and the competitive landscape within a specific industry. Market analysis is a critical component of it includes segment in the market deciding which customers to target and providing the input needed to develop product proposition.
+        </p>
+      </div>
+
+      {/* Profile Card */}
+      <div className="bg-gray-100 p-6 rounded-2xl shadow-lg">
+        <div className="flex items-center gap-6">
+          <img
+            src="/images/newton1.jpg"
+            alt="Huey P Newton"
+            className="w-32 h-32 object-cover rounded-full border-4 border-black"
+          />
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900">Huey P. Newton</h3>
+            <p className="text-sm text-gray-500 italic">African American revolutionary and political activist who founded the Black Panther</p>
           </div>
         </div>
-      )}
+
+        <div className="mt-6 grid grid-cols-2 gap-4">
+          <div>
+            <h4 className="text-sm font-semibold text-gray-800 uppercase mb-2">Personality</h4>
+            <ul className="list-disc ml-4 text-gray-700 text-sm space-y-1">
+              <li>Creative</li>
+              <li>Resourceful</li>
+              <li>Educated</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold text-gray-800 uppercase mb-2">Goals</h4>
+            <ul className="list-disc ml-4 text-gray-700 text-sm space-y-1">
+              <li>Practice self-care daily</li>
+              <li>Reduce household waste</li>
+              <li>Win more clients</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-6 grid grid-cols-2 gap-4">
+          <div>
+            <h4 className="text-sm font-semibold text-gray-800 uppercase mb-2">Likes</h4>
+            <ul className="list-disc ml-4 text-gray-700 text-sm space-y-1">
+              <li>Yoga</li>
+              <li>Lean cooking</li>
+              <li>Productivity apps</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold text-gray-800 uppercase mb-2">Challenges</h4>
+            <ul className="list-disc ml-4 text-gray-700 text-sm space-y-1">
+              <li>Dealing with stress</li>
+              <li>Managing an eco-conscious</li>
+              <li>Meeting her work deadlines</li>
+              <li>Household</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-6">
+          <h4 className="text-sm font-semibold text-gray-800 uppercase mb-2">Dislikes</h4>
+          <ul className="list-disc ml-4 text-gray-700 text-sm space-y-1">
+            <li>Smog</li>
+            <li>Wasteful packaging</li>
+            <li>Fatty food</li>
+          </ul>
+        </div>
+
+        <div className="mt-6">
+          <h4 className="text-sm font-semibold text-gray-800 uppercase mb-2">Products They Enjoy</h4>
+          <ul className="list-disc ml-4 text-gray-700 text-sm space-y-1">
+            <li>Greenery Lifestyle Groceries</li>
+            <li>Flawless Green Skincare Line</li>
+            <li>Year Yoga Gear Mat</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section className="relative bg-gray-50 py-20 px-6 sm:px-10 lg:px-20">
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    
+    {/* Text Section */}
+    <div className="space-y-6">
+      <h2 className="text-4xl font-extrabold text-gray-900 leading-tight">Marketing Plan</h2>
+      <p className="text-lg text-gray-700">
+        <strong>Touching More Lives</strong><br />
+        Evolve Marketing paints the bigger canvas by being tactical and by already having devised short term strategies for the uncertainty. <br /><br />
+        And along term strategies for the long run. <br />
+        For a long lasting impression. We care, our relationship with clients doesn't cease after they make a purchase.
+      </p>
+    </div>
+
+    {/* Image Section */}
+    <div className="w-full">
+      <img
+        src="/images/chic.jpg"
+        alt="Marketing Strategy"
+        className="rounded-3xl shadow-xl w-full h-auto object-cover"
+      />
+    </div>
+  </div>
+
+  {/* Decorative Background Element */}
+  <div className="absolute top-0 left-0 w-32 h-32 bg-black opacity-5 rounded-full blur-2xl -z-10"></div>
+</section>
+
+
+
+<section className="bg-white py-20 px-6 sm:px-10 lg:px-24">
+  <div className="max-w-6xl mx-auto space-y-16">
+    
+    {/* Section Title */}
+    <div className="text-center">
+      <h2 className="text-4xl font-bold text-gray-900 mb-4">Financial Plan</h2>
+      <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+        <strong>Capital Requirements</strong><br />
+        In oder to keep this endeavor up and running we are to be accountable, for the pursuit of what may come out as platform for financial activities
+      </p>
+    </div>
+
+    {/* Capital Table */}
+    <div className="overflow-x-auto">
+      <table className="min-w-full bg-gray-50 rounded-xl shadow-lg">
+        <thead className="bg-gray-200 text-gray-700 uppercase text-sm">
+          <tr>
+          <th className="px-6 py-4 text-left">Requirement</th>
+            <th className="px-6 py-4 text-left">Value</th>
+            <th className="px-6 py-4 text-left">Percentage</th>
+          </tr>
+        </thead>
+        <tbody className="text-gray-800 text-md">
+          <tr className="border-t">
+            <td className="px-6 py-4">Research and Development</td>
+            <td className="px-6 py-4">MWK 100,000</td>
+            <td className="px-6 py-4">44%</td>
+          </tr>
+          <tr className="border-t">
+            <td className="px-6 py-4">Marketing and Advertising</td>
+            <td className="px-6 py-4">MWK 200,000</td>
+            <td className="px-6 py-4">44%</td>
+          </tr>
+          <tr className="border-t">
+            <td className="px-6 py-4">Daily Operations</td>
+            <td className="px-6 py-4">MWK 20,000 x 12</td>
+            <td className="px-6 py-4">22%</td>
+          </tr>
+          <tr className="border-t bg-gray-100 font-bold">
+            <td className="px-6 py-4">TOTAL</td>
+            <td className="px-6 py-4">K540, 000</td>
+            <td className="px-6 py-4">100%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    {/* Financial Outlook Section */}
+    <div className="bg-gray-100 p-8 rounded-2xl shadow-inner">
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">Financial Outlook</h3>
+      <p className="text-gray-700 text-lg">
+        If the business we are running spends K6, 480, 000 annually, K540 000 every month to keep it's day to day operations afloat.
+        Fora a start up company research and development K100, 000 is enough.
+        For advertising our work should speak for itself and let word of mouth take course.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
     </div>
   )
 }
-
-
-// "use client"
-
-// import React, { useState } from 'react'
-// import Image from "next/image"
-
-// // Define the type for the gallery items
-// type GalleryItem = {
-//   src: string
-//   type: "image" | "video"
-//   alt: string
-//   category: string
-// }
-
-// export default function GalleryPage() {
-//   const galleryItems: GalleryItem[] = [
-//     // Images
-//     { src: "/images/chicken1.jpg?height=300&width=400", type: "image", alt: "Poultry Farm", category: "Poultry" },
-//     { src: "/images/chicken2.jpg?height=300&width=400", type: "image", alt: "Poultry Farm", category: "Poultry" },
-//     { src: "/images/chicken3.jpg?height=300&width=400", type: "image", alt: "Poultry Farm", category: "Poultry" },
-//     { src: "/images/chicken4.jpg?height=300&width=400", type: "image", alt: "Poultry Farm", category: "Poultry" },
-//     { src: "/images/chicken5.jpg?height=300&width=400", type: "image", alt: "Poultry Farm", category: "Poultry" },
-//     { src: "/images/chicken6.jpg?height=300&width=400", type: "image", alt: "Poultry Farm", category: "Poultry" },
-//     { src: "/images/maize.jpg?height=300&width=400", type: "image", alt: "Maize Field", category: "Crops" },
-//     { src: "/images/maize3.jpg?height=300&width=400", type: "image", alt: "Maize Field", category: "Crops" },
-//     { src: "/images/maize2.jpg?height=300&width=400", type: "image", alt: "Farm Workers", category: "Team" },
-//     { src: "/images/banana1.jpg?height=300&width=400", type: "image", alt: "Banana Field", category: "Crops" },
-//     { src: "/images/banana2.jpg?height=300&width=400", type: "image", alt: "Banana Field", category: "Crops" },
-//     { src: "/images/banana3.jpg?height=300&width=400", type: "image", alt: "Banana Field", category: "Crops" },
-//     { src: "/images/banana4.jpg?height=300&width=400", type: "image", alt: "Banana Field", category: "Crops" },
-//     { src: "/images/irrigation.jpg?height=300&width=400", type: "image", alt: "Irrigation", category: "Irrigation" },
-//     { src: "/images/organic.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-//     { src: "/images/organic2.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-//     { src: "/images/organic3.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-//     { src: "/images/organic4.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-//     { src: "/images/organic5.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-//     { src: "/images/organic6.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-//     { src: "/images/organic7.jpg?height=300&width=400", type: "image", alt: "Organic Fertilizer", category: "Fertilizer" },
-//     { src: "/images/cattle.jpg?height=300&width=400", type: "image", alt: "Cattle Farming", category: "Cattle" },
-//     { src: "/images/cattle1.jpg?height=300&width=400", type: "image", alt: "Cattle Farming", category: "Cattle" },
-//     { src: "/images/cattle3.jpg?height=300&width=400", type: "image", alt: "Cattle Farming", category: "Cattle" },
-
-//     // Videos (recorded via smartphone)
-//     { src: "/videos/chicken1.mp4", type: "video", alt: "Feeding Chickens", category: "Poultry" },
-//     { src: "/videos/chicken2.mp4", type: "video", alt: "Feeding Chickens", category: "Poultry" },
-//     { src: "/videos/feeds1.mp4", type: "video", alt: "Feeds", category: "Poultry" },
-//     { src: "/videos/feeds2.mp4", type: "video", alt: "Feeds", category: "Poultry" },
-//     { src: "/videos/maize-field1.mp4", type: "video", alt: "Maize", category: "Crops" },
-//     { src: "/videos/maize-field2.mp4", type: "video", alt: "Maize", category: "Crops" },
-//     { src: "/videos/organic1.mp4", type: "video", alt: "Organic Fertilizer", category: "Fertilizer" },
-//     { src: "/videos/organic2.mp4", type: "video", alt: "Organic Fertilizer", category: "Fertilizer" },
-//     { src: "/videos/banana1.mp4", type: "video", alt: "Banana", category: "Crops" },
-//     { src: "/videos/irrigation.mp4", type: "video", alt: "Irrigation Demo", category: "Irrigation" },
-//     { src: "/videos/workers.mp4", type: "video", alt: "Workers", category: "Team" },
-//   ]
-
-
-//   // State to keep track of the selected gallery item
-//   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null)
-
-//   // Function to open the modal
-//   const openModal = (item: GalleryItem) => {
-//     setSelectedItem(item)
-//   }
-
-//   // Function to close the modal
-//   const closeModal = () => {
-//     setSelectedItem(null)
-//   }
-
-//   // Function to go to the next item in the gallery
-//   const nextItem = () => {
-//     if (selectedItem) {
-//       const currentIndex = galleryItems.indexOf(selectedItem)
-//       const nextIndex = (currentIndex + 1) % galleryItems.length // Loop back to the first item
-//       setSelectedItem(galleryItems[nextIndex])
-//     }
-//   }
-
-//   // Function to go to the previous item in the gallery
-//   const prevItem = () => {
-//     if (selectedItem) {
-//       const currentIndex = galleryItems.indexOf(selectedItem)
-//       const prevIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length // Loop to the last item if at the start
-//       setSelectedItem(galleryItems[prevIndex])
-//     }
-//   }
-
-//   return (
-//     <div className="flex min-h-screen flex-col">
-//       {/* Hero Section */}
-//       <section className="relative">
-//         <div className="absolute inset-0 bg-black/60 z-10" />
-//         <div className="relative h-[400px] w-full">
-//           <Image src="/images/banner.jpg" alt="DMT Acres Gallery" fill className="object-cover" />
-//         </div>
-//         <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
-//           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">Photo & Video Gallery</h1>
-//           <p className="mx-auto max-w-[700px] mt-4 text-lg text-gray-200">
-//             A visual showcase of our farming life and operations
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* Gallery Section */}
-//       <section className="py-16">
-//         <div className="container">
-//           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-//             {galleryItems.map((item, index) => (
-//               <div key={index} className="group relative overflow-hidden rounded-lg">
-//                 <div className="relative h-64 w-full">
-//                   {item.type === "image" ? (
-                    
-//                     <Image
-//                       src={item.src}
-//                       alt={item.alt}
-//                       fill
-//                       className="object-cover cursor-pointer transition-transform group-hover:scale-105"
-//                       onClick={() => openModal(item)}
-//                     />
-//                   ) : (
-//                     <video
-//                       src={item.src}
-//                       className="h-full w-full object-cover cursor-pointer"
-//                       muted
-//                       playsInline
-//                       preload="none"
-//                       poster="/videos/thumbnail.jpeg"
-//                       onClick={() => openModal(item)} // Triggers modal
-//                     />
-//                   )}
-//                 </div>
-//                 <div
-//                     onClick={() => setSelectedItem(item)}
-//                     className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 cursor-pointer"
-//                   >
-//                   <p className="font-semibold text-lg">{item.alt}</p>
-//                   <span className="text-sm bg-green-700 px-2 py-1 rounded-full mt-2">{item.category}</span>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Modal */}
-//       {selectedItem && (
-//         <div className="fixed inset-0 bg-black/75 flex items-center justify-center z-50">
-//           <div className="relative max-w-3xl w-full p-4 bg-white rounded-lg shadow-lg">
-//             {/* Next and Previous Buttons */}
-//             <button
-//               className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white bg-gray-600 p-2 rounded-full"
-//               onClick={prevItem}
-//             >
-//               &#8249;
-//             </button>
-//             <button
-//               className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-gray-600 p-2 rounded-full"
-//               onClick={nextItem}
-//             >
-//               &#8250;
-//             </button>
-
-//             <button
-//               className="absolute top-4 right-4 text-white bg-gray-800 p-2 rounded-full"
-//               onClick={closeModal}
-//             >
-//               X
-//             </button>
-
-//             {/* Modal Content */}
-//             <div className="flex justify-center items-center">
-//               {selectedItem.type === "image" ? (
-//                 <Image
-//                   src={selectedItem.src}
-//                   alt={selectedItem.alt}
-//                   width={800}
-//                   height={600}
-//                   className="object-cover"
-//                 />
-//               ) : (
-//                 <video
-//                   src={selectedItem.src}
-//                   controls
-//                   muted
-//                   playsInline
-//                   preload="metadata"
-//                   className="max-w-full h-auto"
-//                 />
-//               )}
-//             </div>
-
-//             <div className="text-center mt-4">
-//               <p className="text-xl font-semibold">{selectedItem.alt}</p>
-//               <p className="text-sm text-gray-500">{selectedItem.category}</p>
-//             </div>
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   )
-// }
